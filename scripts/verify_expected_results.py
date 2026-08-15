@@ -101,7 +101,7 @@ EXPECTED_ROW_COUNTS = {
     "q05.tsv": 6,
     "q06.tsv": 5,
     "q07.tsv": 3,
-    "q08.tsv": 6,
+    "q08.tsv": 4,
     "q09.tsv": 5,
     "q10.tsv": 2,
 }
@@ -109,6 +109,7 @@ EXPECTED_ROW_COUNTS = {
 EXPECTED_SENTINELS = {
     "q01.tsv": [("1", "Customer 001"), ("2", "Customer 002"), ("3", "Customer 003")],
     "q05.tsv": [("1", "Driver 001", "4.50", "4.50"), ("6", "Driver 006", "4.00", "4.00")],
+    "q08.tsv": [("Customer 003", "corporate", "2", "1"), ("Customer 002", "normal", "3", "2")],
     "q10.tsv": [("10", "4", "Customer 004"), ("8", "3", "Customer 003")],
 }
 

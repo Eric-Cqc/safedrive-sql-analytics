@@ -101,7 +101,7 @@ Every query file starts with its business question and uses the fixed `as_of` va
 | `q05.sql` | What driver rating averages are maintained by the insert trigger? | Trigger summary plus aggregate cross-check | 6 |
 | `q06.sql` | Which completed orders belong to VIP customers? | Join and categorical filter | 5 |
 | `q07.sql` | How do customer ratings compare across service types? | Grouped aggregates | 3 |
-| `q08.sql` | Which customers show repeat purchases in the three months before `as_of`? | CTE, distinct counts, ratios | 6 |
+| `q08.sql` | Which customers show repeat purchases among completed orders with a payment record before `as_of`? | CTE, payment join, distinct counts, ratios | 4 |
 | `q09.sql` | What is the distribution of vehicles across brands and models? | Self-join and grouped count | 5 |
 | `q10.sql` | Which completed orders are unpaid, older than 24 hours, and still within seven days of `as_of`? | Fixed rolling-window predicates | 2 |
 
@@ -123,6 +123,8 @@ bash scripts/verify.sh --mysql-user root --database safedrive_portfolio_test
 python3 scripts/verify_expected_results.py
 python3 scripts/audit_public_tree.py
 ```
+
+For password-protected MySQL, append `-p` to the `mysql` commands or use a client option file such as `~/.my.cnf`; keep passwords out of this repository.
 
 `verify.sh` returns status 2 and prints `BLOCKED-DB` if the client cannot connect to MySQL. It returns status 1 for a real SQL, assertion, or idempotency failure. A successful run refreshes `results/q01.tsv` through `results/q10.tsv` from the first deterministic run.
 

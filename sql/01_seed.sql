@@ -106,9 +106,9 @@ VALUES
     (10, 10, 6, '2025-11-13 21:20:00', '2025-11-13 21:35:00', '2025-11-13 22:30:00',
         100000, 100054, 'No visible issues.', 'No visible issues.', 'successful'),
     (11, 11, 6, '2025-11-07 18:20:00', '2025-11-07 18:40:00', '2025-11-07 19:50:00',
-        110000, 11066, 'No visible issues.', 'No visible issues.', 'successful'),
+        110000, 110066, 'No visible issues.', 'No visible issues.', 'successful'),
     (12, 13, 5, '2025-11-14 08:20:00', '2025-11-14 08:25:00', '2025-11-14 09:20:00',
-        120000, 12055, 'No visible issues.', 'No visible issues.', 'successful');
+        120000, 120055, 'No visible issues.', 'No visible issues.', 'successful');
 
 INSERT INTO Rating (rating_id, assignment_id, stars, content) VALUES
     (1, 1, 5, 'Synthetic rating: clear service.'),

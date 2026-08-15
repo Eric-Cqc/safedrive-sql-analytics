@@ -64,12 +64,19 @@ if [[ ! "$DATABASE" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
     exit 64
 fi
 
-case "$DATABASE" in
+DATABASE_LOWER="$(printf '%s' "$DATABASE" | tr '[:upper:]' '[:lower:]')"
+
+case "$DATABASE_LOWER" in
     information_schema|mysql|performance_schema|sys)
         echo "Refusing to recreate a system database: $DATABASE" >&2
         exit 64
         ;;
 esac
+
+if [[ ! "$DATABASE_LOWER" =~ ^safedrive[a-z0-9_]*_test$ ]]; then
+    echo "Refusing database '$DATABASE'; target must match safedrive[a-z0-9_]*_test." >&2
+    exit 64
+fi
 
 if ! command -v mysql >/dev/null 2>&1; then
     echo "BLOCKED-DB: mysql client is not installed or not on PATH" >&2

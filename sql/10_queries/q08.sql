@@ -1,5 +1,5 @@
--- Business question 8: Which customers show repeat purchases in the three months before as_of?
--- Technique: distinct counting, ratios, GROUP BY, and a CTE.
+-- Business question 8: Which customers show repeat purchases among completed orders with a payment record in the three months before as_of?
+-- Technique: completed-order/payment join, distinct counting, ratios, GROUP BY, and a CTE.
 
 SET @as_of = TIMESTAMP('2025-11-15 12:00:00');
 
@@ -13,7 +13,10 @@ WITH customer_order_stats AS (
     FROM Customer AS c
     JOIN `order` AS o
         ON o.customer_id = c.customer_id
-    WHERE o.request_time BETWEEN DATE_SUB(@as_of, INTERVAL 3 MONTH) AND @as_of
+    JOIN Payment AS p
+        ON p.order_id = o.order_id
+    WHERE o.status = 'completed'
+      AND o.request_time BETWEEN DATE_SUB(@as_of, INTERVAL 3 MONTH) AND @as_of
     GROUP BY c.customer_id, c.name, c.membership_tier
 )
 SELECT

@@ -89,6 +89,11 @@ CREATE TABLE Assignment (
     vehicle_condition_before TEXT NULL,
     vehicle_condition_after TEXT NULL,
     outcome ENUM('successful', 'customer no-show', 'refused') NOT NULL,
+    CONSTRAINT chk_assignment_odometer CHECK (
+        odometer_before IS NULL
+        OR odometer_after IS NULL
+        OR odometer_after >= odometer_before
+    ),
     CONSTRAINT fk_assignment_order
         FOREIGN KEY (order_id) REFERENCES `order`(order_id),
     CONSTRAINT fk_assignment_driver
