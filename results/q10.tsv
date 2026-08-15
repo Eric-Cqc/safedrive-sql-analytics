@@ -1,0 +1,3 @@
+order_id	customer_id	customer_name	phone	quoted_fee	payment_time	hours_since_request
+10	4	Customer 004	555-0104	108.00	NULL	39
+8	3	Customer 003	555-0103	95.00	NULL	26

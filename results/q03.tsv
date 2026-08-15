@@ -1,0 +1,7 @@
+partner_name	pickup_location	dropoff_location	pattern_count	route_rank
+Partner Hub Alpha	Zone A Gate	Zone B Hub	2	1
+Partner Hub Alpha	Zone A Gate	Zone C Hub	1	2
+Partner Hub Beta	Zone B Gate	Zone C Hub	2	1
+Partner Hub Beta	Zone B Gate	Zone D Hub	1	2
+Partner Hub Gamma	Zone C Gate	Zone D Hub	2	1
+Partner Hub Gamma	Zone D Gate	Zone E Hub	1	2

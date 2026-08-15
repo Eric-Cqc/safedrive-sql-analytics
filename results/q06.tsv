@@ -1,0 +1,6 @@
+customer_name	order_id	request_time	pickup_location	dropoff_location	service_type
+Customer 001	3	2025-11-14 09:00:00	Zone A Gate	Zone B Hub	next_day
+Customer 004	10	2025-11-13 21:00:00	Zone D Gate	Zone F Hub	drive_now
+Customer 001	2	2025-11-12 20:00:00	Zone B Gate	Zone C Hub	overnight
+Customer 001	1	2025-11-10 17:50:00	Zone A Gate	Zone B Hub	drive_now
+Customer 004	9	2025-11-08 19:00:00	Zone D Gate	Zone E Hub	overnight

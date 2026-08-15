@@ -1,0 +1,7 @@
+customer_name	membership_tier	total_orders	vehicle_count	orders_per_vehicle	repeat_purchase_rate
+Customer 002	normal	4	2	2.00	0.50
+Customer 003	corporate	2	1	2.00	0.50
+Customer 004	VIP	2	1	2.00	0.50
+Customer 005	normal	2	1	2.00	0.50
+Customer 006	corporate	2	1	2.00	0.50
+Customer 001	VIP	3	2	1.50	0.33
