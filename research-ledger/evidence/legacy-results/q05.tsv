@@ -1,0 +1,7 @@
+driver_id	driver_name	trigger_avg_rating	recomputed_avg_rating	rating_count
+1	Driver 001	4.50	4.50	2
+2	Driver 002	4.00	4.00	2
+3	Driver 003	4.50	4.50	2
+4	Driver 004	5.00	5.00	1
+5	Driver 005	3.50	3.50	2
+6	Driver 006	4.00	4.00	1

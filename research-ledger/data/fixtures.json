@@ -1,0 +1,1809 @@
+{
+  "meta": {
+    "dataset": "synthetic-boundaries-v2",
+    "synthetic": true,
+    "as_of": "2025-11-15 12:00:00",
+    "timezone": "Asia/Hong_Kong",
+    "currency": "CNY",
+    "distance_unit": "km",
+    "origin": "coursework fixture plus deliberately constructed counterexamples",
+    "limitations": [
+      "No real customer or operating data.",
+      "A single settlement and at most one refund event per order.",
+      "Current membership tier; no historical tier inference."
+    ]
+  },
+  "tables": {
+    "Customer": [
+      {
+        "customer_id": 1,
+        "name": "Customer 001",
+        "phone": "555-0101",
+        "license_number": "TEST-CUST-001",
+        "membership_tier": "VIP"
+      },
+      {
+        "customer_id": 2,
+        "name": "Customer 002",
+        "phone": "555-0102",
+        "license_number": "TEST-CUST-002",
+        "membership_tier": "normal"
+      },
+      {
+        "customer_id": 3,
+        "name": "Customer 003",
+        "phone": "555-0103",
+        "license_number": "TEST-CUST-003",
+        "membership_tier": "corporate"
+      },
+      {
+        "customer_id": 4,
+        "name": "Customer 004",
+        "phone": "555-0104",
+        "license_number": "TEST-CUST-004",
+        "membership_tier": "VIP"
+      },
+      {
+        "customer_id": 5,
+        "name": "Customer 005",
+        "phone": "555-0105",
+        "license_number": "TEST-CUST-005",
+        "membership_tier": "normal"
+      },
+      {
+        "customer_id": 6,
+        "name": "Customer 006",
+        "phone": "555-0106",
+        "license_number": "TEST-CUST-006",
+        "membership_tier": "corporate"
+      }
+    ],
+    "Brandmodel": [
+      {
+        "id": 1,
+        "name": "Brand Alpha",
+        "parent_id": null
+      },
+      {
+        "id": 2,
+        "name": "Brand Beta",
+        "parent_id": null
+      },
+      {
+        "id": 3,
+        "name": "Brand Gamma",
+        "parent_id": null
+      },
+      {
+        "id": 4,
+        "name": "Model Alpha One",
+        "parent_id": 1
+      },
+      {
+        "id": 5,
+        "name": "Model Alpha Two",
+        "parent_id": 1
+      },
+      {
+        "id": 6,
+        "name": "Model Beta One",
+        "parent_id": 2
+      },
+      {
+        "id": 7,
+        "name": "Model Beta Two",
+        "parent_id": 2
+      },
+      {
+        "id": 8,
+        "name": "Model Gamma One",
+        "parent_id": 3
+      },
+      {
+        "id": 9,
+        "name": "Model Gamma Empty",
+        "parent_id": 3
+      }
+    ],
+    "Vehicle": [
+      {
+        "vehicle_id": 1,
+        "customer_id": 1,
+        "plate_no": "TEST-PLATE-001",
+        "model_id": 4,
+        "year": 2021,
+        "color": "Silver",
+        "insurance": "TEST-POLICY-001",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 2,
+        "customer_id": 1,
+        "plate_no": "TEST-PLATE-002",
+        "model_id": 5,
+        "year": 2022,
+        "color": "Blue",
+        "insurance": "TEST-POLICY-002",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 3,
+        "customer_id": 2,
+        "plate_no": "TEST-PLATE-003",
+        "model_id": 6,
+        "year": 2020,
+        "color": "Gray",
+        "insurance": "TEST-POLICY-003",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 4,
+        "customer_id": 2,
+        "plate_no": "TEST-PLATE-004",
+        "model_id": 7,
+        "year": 2019,
+        "color": "White",
+        "insurance": "TEST-POLICY-004",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 5,
+        "customer_id": 3,
+        "plate_no": "TEST-PLATE-005",
+        "model_id": 8,
+        "year": 2023,
+        "color": "Black",
+        "insurance": "TEST-POLICY-005",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 6,
+        "customer_id": 4,
+        "plate_no": "TEST-PLATE-006",
+        "model_id": 4,
+        "year": 2021,
+        "color": "Red",
+        "insurance": "TEST-POLICY-006",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 7,
+        "customer_id": 5,
+        "plate_no": "TEST-PLATE-007",
+        "model_id": 5,
+        "year": 2020,
+        "color": "White",
+        "insurance": "TEST-POLICY-007",
+        "registered_at": "2025-01-01 00:00:00"
+      },
+      {
+        "vehicle_id": 8,
+        "customer_id": 6,
+        "plate_no": "TEST-PLATE-008",
+        "model_id": 6,
+        "year": 2022,
+        "color": "Green",
+        "insurance": "TEST-POLICY-008",
+        "registered_at": "2025-01-01 00:00:00"
+      }
+    ],
+    "Driver": [
+      {
+        "driver_id": 1,
+        "name": "Driver 001",
+        "phone": "555-0107",
+        "cert_id": "TEST-LIC-001",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 2,
+        "name": "Driver 002",
+        "phone": "555-0108",
+        "cert_id": "TEST-LIC-002",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 3,
+        "name": "Driver 003",
+        "phone": "555-0109",
+        "cert_id": "TEST-LIC-003",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 4,
+        "name": "Driver 004",
+        "phone": "555-0110",
+        "cert_id": "TEST-LIC-004",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 5,
+        "name": "Driver 005",
+        "phone": "555-0111",
+        "cert_id": "TEST-LIC-005",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 6,
+        "name": "Driver 006",
+        "phone": "555-0112",
+        "cert_id": "TEST-LIC-006",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      },
+      {
+        "driver_id": 7,
+        "name": "Driver 007",
+        "phone": "555-0113",
+        "cert_id": "TEST-LIC-007",
+        "status": "active",
+        "avg_rating": null,
+        "rating_count": 0,
+        "rating_sum": 0
+      }
+    ],
+    "order": [
+      {
+        "order_id": 1,
+        "customer_id": 1,
+        "vehicle_id": 1,
+        "pickup_location": "Zone A Gate",
+        "dropoff_location": "Zone B Hub",
+        "request_time": "2025-11-10 17:50:00",
+        "scheduled_start": "2025-11-10 18:00:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-10 18:50:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 2,
+        "customer_id": 1,
+        "vehicle_id": 2,
+        "pickup_location": "Zone B Gate",
+        "dropoff_location": "Zone C Hub",
+        "request_time": "2025-11-12 20:00:00",
+        "scheduled_start": "2025-11-12 20:30:00",
+        "service_type": "overnight",
+        "status": "completed",
+        "completed_at": "2025-11-12 23:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 3,
+        "customer_id": 1,
+        "vehicle_id": 1,
+        "pickup_location": "Zone A Gate",
+        "dropoff_location": "Zone B Hub",
+        "request_time": "2025-11-14 09:00:00",
+        "scheduled_start": "2025-11-14 09:30:00",
+        "service_type": "next_day",
+        "status": "completed",
+        "completed_at": "2025-11-14 10:45:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 4,
+        "customer_id": 2,
+        "vehicle_id": 3,
+        "pickup_location": "Zone C Gate",
+        "dropoff_location": "Zone D Hub",
+        "request_time": "2025-11-11 16:00:00",
+        "scheduled_start": "2025-11-11 18:00:00",
+        "service_type": "overnight",
+        "status": "completed",
+        "completed_at": "2025-11-11 19:10:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 5,
+        "customer_id": 2,
+        "vehicle_id": 4,
+        "pickup_location": "Zone B Gate",
+        "dropoff_location": "Zone C Hub",
+        "request_time": "2025-11-13 07:30:00",
+        "scheduled_start": "2025-11-13 08:00:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 09:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 6,
+        "customer_id": 2,
+        "vehicle_id": 3,
+        "pickup_location": "Zone B Gate",
+        "dropoff_location": "Zone D Hub",
+        "request_time": "2025-11-14 22:00:00",
+        "scheduled_start": "2025-11-14 22:30:00",
+        "service_type": "overnight",
+        "status": "completed",
+        "completed_at": "2025-11-14 23:40:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 7,
+        "customer_id": 3,
+        "vehicle_id": 5,
+        "pickup_location": "Zone A Gate",
+        "dropoff_location": "Zone C Hub",
+        "request_time": "2025-11-05 12:00:00",
+        "scheduled_start": "2025-11-05 13:00:00",
+        "service_type": "next_day",
+        "status": "completed",
+        "completed_at": "2025-11-05 14:15:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 8,
+        "customer_id": 3,
+        "vehicle_id": 5,
+        "pickup_location": "Zone C Gate",
+        "dropoff_location": "Zone D Hub",
+        "request_time": "2025-11-14 10:00:00",
+        "scheduled_start": "2025-11-14 10:30:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-14 11:40:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 9,
+        "customer_id": 4,
+        "vehicle_id": 6,
+        "pickup_location": "Zone D Gate",
+        "dropoff_location": "Zone E Hub",
+        "request_time": "2025-11-08 19:00:00",
+        "scheduled_start": "2025-11-08 19:30:00",
+        "service_type": "overnight",
+        "status": "completed",
+        "completed_at": "2025-11-08 21:50:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 10,
+        "customer_id": 4,
+        "vehicle_id": 6,
+        "pickup_location": "Zone D Gate",
+        "dropoff_location": "Zone F Hub",
+        "request_time": "2025-11-13 21:00:00",
+        "scheduled_start": "2025-11-13 21:30:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 22:30:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 11,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone F Hub",
+        "request_time": "2025-11-07 18:00:00",
+        "scheduled_start": "2025-11-07 18:30:00",
+        "service_type": "next_day",
+        "status": "completed",
+        "completed_at": "2025-11-07 19:50:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 12,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone G Hub",
+        "request_time": "2025-11-13 08:00:00",
+        "scheduled_start": "2025-11-13 08:30:00",
+        "service_type": "drive_now",
+        "status": "assigned",
+        "completed_at": null,
+        "cancelled_at": null
+      },
+      {
+        "order_id": 13,
+        "customer_id": 6,
+        "vehicle_id": 8,
+        "pickup_location": "Zone F Gate",
+        "dropoff_location": "Zone G Hub",
+        "request_time": "2025-11-14 08:00:00",
+        "scheduled_start": "2025-11-14 08:30:00",
+        "service_type": "overnight",
+        "status": "completed",
+        "completed_at": "2025-11-14 09:20:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 14,
+        "customer_id": 6,
+        "vehicle_id": 8,
+        "pickup_location": "Zone F Gate",
+        "dropoff_location": "Zone H Hub",
+        "request_time": "2025-11-14 23:00:00",
+        "scheduled_start": "2025-11-14 23:30:00",
+        "service_type": "drive_now",
+        "status": "pending",
+        "completed_at": null,
+        "cancelled_at": null
+      },
+      {
+        "order_id": 15,
+        "customer_id": 2,
+        "vehicle_id": 3,
+        "pickup_location": "Zone B Gate",
+        "dropoff_location": "Zone A Hub",
+        "request_time": "2025-11-04 10:00:00",
+        "scheduled_start": "2025-11-04 11:00:00",
+        "service_type": "overnight",
+        "status": "cancelled",
+        "completed_at": null,
+        "cancelled_at": "2025-11-04 10:30:00"
+      },
+      {
+        "order_id": 16,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-13 10:40:00",
+        "scheduled_start": "2025-11-13 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 17,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-14 10:40:00",
+        "scheduled_start": "2025-11-14 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-14 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 18,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-14 10:39:59",
+        "scheduled_start": "2025-11-14 11:04:59",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-14 11:59:59",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 19,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-08 10:40:00",
+        "scheduled_start": "2025-11-08 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-08 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 20,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-08 10:39:59",
+        "scheduled_start": "2025-11-08 11:04:59",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-08 11:59:59",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 21,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-13 10:40:00",
+        "scheduled_start": "2025-11-13 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 22,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-12 10:40:00",
+        "scheduled_start": "2025-11-12 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-12 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 23,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-11 10:40:00",
+        "scheduled_start": "2025-11-11 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-11 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 24,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-10 10:40:00",
+        "scheduled_start": "2025-11-10 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-10 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 25,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-13 09:40:00",
+        "scheduled_start": "2025-11-13 10:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 11:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 26,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-13 08:40:00",
+        "scheduled_start": "2025-11-13 09:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 10:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 27,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-10-06 12:00:00",
+        "scheduled_start": "2025-11-13 08:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-13 09:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 28,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-15 10:00:00",
+        "scheduled_start": "2025-11-15 13:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-15 14:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 29,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-10-06 10:40:00",
+        "scheduled_start": "2025-10-06 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-10-06 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 30,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-13 10:40:00",
+        "scheduled_start": "2025-11-13 11:05:00",
+        "service_type": "drive_now",
+        "status": "cancelled",
+        "completed_at": null,
+        "cancelled_at": "2025-11-13 11:10:00"
+      },
+      {
+        "order_id": 31,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-10-16 10:40:00",
+        "scheduled_start": "2025-10-16 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-10-16 12:00:00",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 32,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-10-16 10:39:59",
+        "scheduled_start": "2025-10-16 11:04:59",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-10-16 11:59:59",
+        "cancelled_at": null
+      },
+      {
+        "order_id": 33,
+        "customer_id": 5,
+        "vehicle_id": 7,
+        "pickup_location": "Zone E Gate",
+        "dropoff_location": "Zone Boundary Hub",
+        "request_time": "2025-11-14 10:40:00",
+        "scheduled_start": "2025-11-14 11:05:00",
+        "service_type": "drive_now",
+        "status": "completed",
+        "completed_at": "2025-11-14 12:00:00",
+        "cancelled_at": null
+      }
+    ],
+    "Assignment": [
+      {
+        "assignment_id": 1,
+        "order_id": 1,
+        "driver_id": 1,
+        "assign_time": "2025-11-10 17:55:00",
+        "start_time": "2025-11-10 18:08:00",
+        "end_time": "2025-11-10 18:50:00",
+        "odometer_before": 10000,
+        "odometer_after": 10042,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 2,
+        "order_id": 2,
+        "driver_id": 1,
+        "assign_time": "2025-11-12 20:10:00",
+        "start_time": "2025-11-12 20:32:00",
+        "end_time": "2025-11-12 23:00:00",
+        "odometer_before": 20000,
+        "odometer_after": 20120,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 3,
+        "order_id": 3,
+        "driver_id": 2,
+        "assign_time": "2025-11-14 09:20:00",
+        "start_time": "2025-11-14 09:25:00",
+        "end_time": "2025-11-14 10:45:00",
+        "odometer_before": 30000,
+        "odometer_after": 30068,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 4,
+        "order_id": 4,
+        "driver_id": 2,
+        "assign_time": "2025-11-11 18:05:00",
+        "start_time": "2025-11-11 18:20:00",
+        "end_time": "2025-11-11 19:10:00",
+        "odometer_before": 40000,
+        "odometer_after": 40050,
+        "vehicle_condition_before": "Minor surface mark recorded.",
+        "vehicle_condition_after": "Minor surface mark recorded.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 5,
+        "order_id": 5,
+        "driver_id": 3,
+        "assign_time": "2025-11-13 07:50:00",
+        "start_time": "2025-11-13 08:10:00",
+        "end_time": "2025-11-13 09:00:00",
+        "odometer_before": 50000,
+        "odometer_after": 50045,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 6,
+        "order_id": 6,
+        "driver_id": 3,
+        "assign_time": "2025-11-14 22:20:00",
+        "start_time": "2025-11-14 22:31:00",
+        "end_time": "2025-11-14 23:40:00",
+        "odometer_before": 60000,
+        "odometer_after": 60072,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 7,
+        "order_id": 7,
+        "driver_id": 4,
+        "assign_time": "2025-11-05 12:50:00",
+        "start_time": "2025-11-05 13:05:00",
+        "end_time": "2025-11-05 14:15:00",
+        "odometer_before": 70000,
+        "odometer_after": 70070,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 8,
+        "order_id": 8,
+        "driver_id": 4,
+        "assign_time": "2025-11-14 10:20:00",
+        "start_time": "2025-11-14 10:45:00",
+        "end_time": "2025-11-14 11:40:00",
+        "odometer_before": 80000,
+        "odometer_after": 80055,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 9,
+        "order_id": 9,
+        "driver_id": 5,
+        "assign_time": "2025-11-08 19:20:00",
+        "start_time": "2025-11-08 19:40:00",
+        "end_time": "2025-11-08 21:50:00",
+        "odometer_before": 90000,
+        "odometer_after": 90110,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 10,
+        "order_id": 10,
+        "driver_id": 6,
+        "assign_time": "2025-11-13 21:20:00",
+        "start_time": "2025-11-13 21:35:00",
+        "end_time": "2025-11-13 22:30:00",
+        "odometer_before": 100000,
+        "odometer_after": 100054,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 11,
+        "order_id": 11,
+        "driver_id": 6,
+        "assign_time": "2025-11-07 18:20:00",
+        "start_time": "2025-11-07 18:40:00",
+        "end_time": "2025-11-07 19:50:00",
+        "odometer_before": 110000,
+        "odometer_after": 110066,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 12,
+        "order_id": 13,
+        "driver_id": 5,
+        "assign_time": "2025-11-14 08:20:00",
+        "start_time": "2025-11-14 08:25:00",
+        "end_time": "2025-11-14 09:20:00",
+        "odometer_before": 120000,
+        "odometer_after": 120055,
+        "vehicle_condition_before": "No visible issues.",
+        "vehicle_condition_after": "No visible issues.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 100,
+        "order_id": 2,
+        "driver_id": 7,
+        "assign_time": "2025-11-12 20:01:00",
+        "start_time": null,
+        "end_time": null,
+        "odometer_before": null,
+        "odometer_after": null,
+        "vehicle_condition_before": null,
+        "vehicle_condition_after": null,
+        "outcome": "refused"
+      },
+      {
+        "assignment_id": 16,
+        "order_id": 16,
+        "driver_id": 7,
+        "assign_time": "2025-11-13 10:41:00",
+        "start_time": "2025-11-13 11:10:00",
+        "end_time": "2025-11-13 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 17,
+        "order_id": 17,
+        "driver_id": 7,
+        "assign_time": "2025-11-14 10:41:00",
+        "start_time": "2025-11-14 11:10:00",
+        "end_time": "2025-11-14 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 18,
+        "order_id": 18,
+        "driver_id": 7,
+        "assign_time": "2025-11-14 10:40:59",
+        "start_time": "2025-11-14 11:09:59",
+        "end_time": "2025-11-14 11:59:59",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 19,
+        "order_id": 19,
+        "driver_id": 7,
+        "assign_time": "2025-11-08 10:41:00",
+        "start_time": "2025-11-08 11:10:00",
+        "end_time": "2025-11-08 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 20,
+        "order_id": 20,
+        "driver_id": 7,
+        "assign_time": "2025-11-08 10:40:59",
+        "start_time": "2025-11-08 11:09:59",
+        "end_time": "2025-11-08 11:59:59",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 21,
+        "order_id": 21,
+        "driver_id": 7,
+        "assign_time": "2025-11-13 10:41:00",
+        "start_time": "2025-11-13 11:10:00",
+        "end_time": "2025-11-13 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 22,
+        "order_id": 22,
+        "driver_id": 7,
+        "assign_time": "2025-11-12 10:41:00",
+        "start_time": "2025-11-12 11:10:00",
+        "end_time": "2025-11-12 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 23,
+        "order_id": 23,
+        "driver_id": 7,
+        "assign_time": "2025-11-11 10:41:00",
+        "start_time": "2025-11-11 11:10:00",
+        "end_time": "2025-11-11 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 24,
+        "order_id": 24,
+        "driver_id": 7,
+        "assign_time": "2025-11-10 10:41:00",
+        "start_time": "2025-11-10 11:10:00",
+        "end_time": "2025-11-10 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 25,
+        "order_id": 25,
+        "driver_id": 7,
+        "assign_time": "2025-11-13 09:41:00",
+        "start_time": "2025-11-13 10:10:00",
+        "end_time": "2025-11-13 11:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1000,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 26,
+        "order_id": 26,
+        "driver_id": 7,
+        "assign_time": "2025-11-13 08:41:00",
+        "start_time": "2025-11-13 09:10:00",
+        "end_time": "2025-11-13 10:00:00",
+        "odometer_before": null,
+        "odometer_after": null,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 27,
+        "order_id": 27,
+        "driver_id": 7,
+        "assign_time": "2025-10-06 12:01:00",
+        "start_time": "2025-11-13 08:10:00",
+        "end_time": "2025-11-13 09:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 28,
+        "order_id": 28,
+        "driver_id": 7,
+        "assign_time": "2025-11-15 10:01:00",
+        "start_time": "2025-11-15 13:10:00",
+        "end_time": "2025-11-15 14:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 29,
+        "order_id": 29,
+        "driver_id": 1,
+        "assign_time": "2025-10-06 10:41:00",
+        "start_time": "2025-10-06 11:10:00",
+        "end_time": "2025-10-06 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 30,
+        "order_id": 30,
+        "driver_id": 7,
+        "assign_time": "2025-11-13 10:41:00",
+        "start_time": null,
+        "end_time": null,
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "refused"
+      },
+      {
+        "assignment_id": 31,
+        "order_id": 31,
+        "driver_id": 7,
+        "assign_time": "2025-10-16 10:41:00",
+        "start_time": "2025-10-16 11:10:00",
+        "end_time": "2025-10-16 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 32,
+        "order_id": 32,
+        "driver_id": 7,
+        "assign_time": "2025-10-16 10:40:59",
+        "start_time": "2025-10-16 11:09:59",
+        "end_time": "2025-10-16 11:59:59",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      },
+      {
+        "assignment_id": 33,
+        "order_id": 33,
+        "driver_id": 6,
+        "assign_time": "2025-11-14 10:41:00",
+        "start_time": "2025-11-14 11:10:00",
+        "end_time": "2025-11-14 12:00:00",
+        "odometer_before": 1000,
+        "odometer_after": 1020,
+        "vehicle_condition_before": "Synthetic case.",
+        "vehicle_condition_after": "Synthetic case.",
+        "outcome": "successful"
+      }
+    ],
+    "Rating": [
+      {
+        "rating_id": 1,
+        "assignment_id": 1,
+        "stars": 5,
+        "content": "Synthetic rating: clear service.",
+        "rated_at": "2025-11-10 19:00:00"
+      },
+      {
+        "rating_id": 2,
+        "assignment_id": 2,
+        "stars": 4,
+        "content": "Synthetic rating: dependable service.",
+        "rated_at": "2025-11-12 23:10:00"
+      },
+      {
+        "rating_id": 3,
+        "assignment_id": 3,
+        "stars": 5,
+        "content": "Synthetic rating: smooth handoff.",
+        "rated_at": "2025-11-14 10:55:00"
+      },
+      {
+        "rating_id": 4,
+        "assignment_id": 4,
+        "stars": 3,
+        "content": "Synthetic rating: acceptable service.",
+        "rated_at": "2025-11-11 19:20:00"
+      },
+      {
+        "rating_id": 5,
+        "assignment_id": 5,
+        "stars": 4,
+        "content": "Synthetic rating: timely completion.",
+        "rated_at": "2025-11-13 09:10:00"
+      },
+      {
+        "rating_id": 6,
+        "assignment_id": 6,
+        "stars": 5,
+        "content": "Synthetic rating: careful completion.",
+        "rated_at": "2025-11-14 23:50:00"
+      },
+      {
+        "rating_id": 7,
+        "assignment_id": 7,
+        "stars": 5,
+        "content": "Synthetic rating: clear communication.",
+        "rated_at": "2025-11-05 14:25:00"
+      },
+      {
+        "rating_id": 8,
+        "assignment_id": 9,
+        "stars": 4,
+        "content": "Synthetic rating: steady service.",
+        "rated_at": "2025-11-08 22:00:00"
+      },
+      {
+        "rating_id": 9,
+        "assignment_id": 11,
+        "stars": 4,
+        "content": "Synthetic rating: reliable completion.",
+        "rated_at": "2025-11-07 20:00:00"
+      },
+      {
+        "rating_id": 10,
+        "assignment_id": 12,
+        "stars": 3,
+        "content": "Synthetic rating: service completed.",
+        "rated_at": "2025-11-14 09:30:00"
+      },
+      {
+        "rating_id": 21,
+        "assignment_id": 21,
+        "stars": 1,
+        "content": "Synthetic boundary rating.",
+        "rated_at": "2025-11-15 14:00:00"
+      },
+      {
+        "rating_id": 22,
+        "assignment_id": 22,
+        "stars": 5,
+        "content": "Synthetic boundary rating.",
+        "rated_at": "2025-11-12 12:10:00"
+      },
+      {
+        "rating_id": 25,
+        "assignment_id": 25,
+        "stars": 4,
+        "content": "Synthetic boundary rating.",
+        "rated_at": "2025-11-13 11:10:00"
+      }
+    ],
+    "Payment": [
+      {
+        "payment_id": 1,
+        "order_id": 1,
+        "quoted_fee": 88.0,
+        "final_fee": 88.0,
+        "method": "credit card",
+        "payment_time": "2025-11-10 18:51:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 2,
+        "order_id": 2,
+        "quoted_fee": 126.0,
+        "final_fee": 126.0,
+        "method": "credit card",
+        "payment_time": "2025-11-12 23:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 3,
+        "order_id": 3,
+        "quoted_fee": 72.0,
+        "final_fee": 72.0,
+        "method": "corporate invoice",
+        "payment_time": "2025-11-14 10:46:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 4,
+        "order_id": 4,
+        "quoted_fee": 154.0,
+        "final_fee": 154.0,
+        "method": "cash",
+        "payment_time": "2025-11-11 19:11:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 5,
+        "order_id": 5,
+        "quoted_fee": 66.0,
+        "final_fee": 66.0,
+        "method": "credit card",
+        "payment_time": "2025-11-13 09:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 6,
+        "order_id": 6,
+        "quoted_fee": 110.0,
+        "final_fee": 110.0,
+        "method": "credit card",
+        "payment_time": "2025-11-14 23:41:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 7,
+        "order_id": 7,
+        "quoted_fee": 180.0,
+        "final_fee": null,
+        "method": "corporate invoice",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 8,
+        "order_id": 8,
+        "quoted_fee": 95.0,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 9,
+        "order_id": 9,
+        "quoted_fee": 140.0,
+        "final_fee": 140.0,
+        "method": "credit card",
+        "payment_time": "2025-11-08 21:51:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 10,
+        "order_id": 10,
+        "quoted_fee": 108.0,
+        "final_fee": null,
+        "method": "cash",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 11,
+        "order_id": 11,
+        "quoted_fee": 84.0,
+        "final_fee": 84.0,
+        "method": "credit card",
+        "payment_time": "2025-11-07 19:51:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 12,
+        "order_id": 12,
+        "quoted_fee": 60.0,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 13,
+        "order_id": 13,
+        "quoted_fee": 95.0,
+        "final_fee": 95.0,
+        "method": "corporate invoice",
+        "payment_time": "2025-11-14 09:21:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 17,
+        "order_id": 17,
+        "quoted_fee": 100,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 18,
+        "order_id": 18,
+        "quoted_fee": 100,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 19,
+        "order_id": 19,
+        "quoted_fee": 100,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 20,
+        "order_id": 20,
+        "quoted_fee": 100,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 21,
+        "order_id": 21,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-15 13:00:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 22,
+        "order_id": 22,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-12 12:01:00",
+        "status": "refunded",
+        "refund_amount": 100,
+        "refund_time": "2025-11-16 12:00:00"
+      },
+      {
+        "payment_id": 23,
+        "order_id": 23,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-11 12:01:00",
+        "status": "refunded",
+        "refund_amount": 100,
+        "refund_time": "2025-11-14 12:00:00"
+      },
+      {
+        "payment_id": 24,
+        "order_id": 24,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-10 12:01:00",
+        "status": "refunded",
+        "refund_amount": 40,
+        "refund_time": "2025-11-14 12:00:00"
+      },
+      {
+        "payment_id": 25,
+        "order_id": 25,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-13 11:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 26,
+        "order_id": 26,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-13 10:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 27,
+        "order_id": 27,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-13 09:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 28,
+        "order_id": 28,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-15 15:00:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 29,
+        "order_id": 29,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-14 12:00:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 30,
+        "order_id": 30,
+        "quoted_fee": 100,
+        "final_fee": null,
+        "method": "credit card",
+        "payment_time": null,
+        "status": "pending",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 31,
+        "order_id": 31,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-10-16 12:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 32,
+        "order_id": 32,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-10-16 12:01:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      },
+      {
+        "payment_id": 33,
+        "order_id": 33,
+        "quoted_fee": 100,
+        "final_fee": 100,
+        "method": "credit card",
+        "payment_time": "2025-11-14 13:00:00",
+        "status": "paid",
+        "refund_amount": 0,
+        "refund_time": null
+      }
+    ],
+    "Incident": [
+      {
+        "incident_id": 1,
+        "order_id": 1,
+        "reporter": "driver",
+        "category": "unsafe driving",
+        "description": "Synthetic low-severity review flag.",
+        "severity": 2,
+        "resolution": "Reviewed with service team.",
+        "recorded_at": "2025-11-10 19:05:00"
+      },
+      {
+        "incident_id": 2,
+        "order_id": 2,
+        "reporter": "customer",
+        "category": "unsafe driving",
+        "description": "Synthetic high-severity safety flag.",
+        "severity": 4,
+        "resolution": "Safety coaching recorded.",
+        "recorded_at": "2025-11-12 23:15:00"
+      },
+      {
+        "incident_id": 3,
+        "order_id": 4,
+        "reporter": "customer",
+        "category": "vehicle damage",
+        "description": "Synthetic high-severity condition flag.",
+        "severity": 5,
+        "resolution": "Inspection completed.",
+        "recorded_at": "2025-11-11 19:25:00"
+      },
+      {
+        "incident_id": 4,
+        "order_id": 7,
+        "reporter": "driver",
+        "category": "payment dispute",
+        "description": "Synthetic billing review flag.",
+        "severity": 3,
+        "resolution": "Billing review opened.",
+        "recorded_at": "2025-11-05 14:30:00"
+      },
+      {
+        "incident_id": 5,
+        "order_id": 8,
+        "reporter": "customer",
+        "category": "harassment",
+        "description": "Synthetic conduct review flag.",
+        "severity": 4,
+        "resolution": "Case review opened.",
+        "recorded_at": "2025-11-14 11:55:00"
+      },
+      {
+        "incident_id": 6,
+        "order_id": 2,
+        "reporter": "driver",
+        "category": "unsafe driving",
+        "description": "Synthetic duplicate-event counterexample.",
+        "severity": 4,
+        "resolution": "Teaching fixture only.",
+        "recorded_at": "2025-11-12 23:20:00"
+      },
+      {
+        "incident_id": 7,
+        "order_id": 3,
+        "reporter": "customer",
+        "category": "vehicle damage",
+        "description": "Synthetic future-event counterexample.",
+        "severity": 5,
+        "resolution": "Teaching fixture only.",
+        "recorded_at": "2025-11-16 12:00:00"
+      }
+    ],
+    "ParkingCustody": [
+      {
+        "custody_id": 1,
+        "assignment_id": 1,
+        "partner_name": "Partner Hub Alpha",
+        "check_in_time": "2025-11-10 19:00:00",
+        "check_out_time": "2025-11-10 19:20:00",
+        "liability_limit": 3000.0,
+        "fee": 22.0
+      },
+      {
+        "custody_id": 2,
+        "assignment_id": 3,
+        "partner_name": "Partner Hub Alpha",
+        "check_in_time": "2025-11-14 09:40:00",
+        "check_out_time": "2025-11-14 10:00:00",
+        "liability_limit": 3000.0,
+        "fee": 22.0
+      },
+      {
+        "custody_id": 3,
+        "assignment_id": 7,
+        "partner_name": "Partner Hub Alpha",
+        "check_in_time": "2025-11-05 13:15:00",
+        "check_out_time": "2025-11-05 13:35:00",
+        "liability_limit": 3000.0,
+        "fee": 22.0
+      },
+      {
+        "custody_id": 4,
+        "assignment_id": 2,
+        "partner_name": "Partner Hub Beta",
+        "check_in_time": "2025-11-12 20:40:00",
+        "check_out_time": "2025-11-12 21:00:00",
+        "liability_limit": 4200.0,
+        "fee": 28.0
+      },
+      {
+        "custody_id": 5,
+        "assignment_id": 5,
+        "partner_name": "Partner Hub Beta",
+        "check_in_time": "2025-11-13 08:20:00",
+        "check_out_time": "2025-11-13 08:40:00",
+        "liability_limit": 4200.0,
+        "fee": 28.0
+      },
+      {
+        "custody_id": 6,
+        "assignment_id": 6,
+        "partner_name": "Partner Hub Beta",
+        "check_in_time": "2025-11-14 22:45:00",
+        "check_out_time": "2025-11-14 23:05:00",
+        "liability_limit": 4200.0,
+        "fee": 30.0
+      },
+      {
+        "custody_id": 7,
+        "assignment_id": 4,
+        "partner_name": "Partner Hub Gamma",
+        "check_in_time": "2025-11-11 18:30:00",
+        "check_out_time": "2025-11-11 18:50:00",
+        "liability_limit": 5200.0,
+        "fee": 34.0
+      },
+      {
+        "custody_id": 8,
+        "assignment_id": 8,
+        "partner_name": "Partner Hub Gamma",
+        "check_in_time": "2025-11-14 10:55:00",
+        "check_out_time": "2025-11-14 11:15:00",
+        "liability_limit": 5200.0,
+        "fee": 34.0
+      },
+      {
+        "custody_id": 9,
+        "assignment_id": 9,
+        "partner_name": "Partner Hub Gamma",
+        "check_in_time": "2025-11-08 20:00:00",
+        "check_out_time": "2025-11-08 20:20:00",
+        "liability_limit": 5200.0,
+        "fee": 36.0
+      }
+    ],
+    "Reimbursement": [
+      {
+        "reimbursement_id": 1,
+        "assignment_id": 1,
+        "transport_mode": "metro",
+        "claimed_amount": 12.0,
+        "status": "approved",
+        "submit_time": "2025-11-10 19:30:00",
+        "approve_time": "2025-11-10 20:00:00"
+      },
+      {
+        "reimbursement_id": 2,
+        "assignment_id": 2,
+        "transport_mode": "taxi",
+        "claimed_amount": 35.0,
+        "status": "approved",
+        "submit_time": "2025-11-12 23:10:00",
+        "approve_time": "2025-11-13 09:00:00"
+      },
+      {
+        "reimbursement_id": 3,
+        "assignment_id": 5,
+        "transport_mode": "company shuttle",
+        "claimed_amount": 18.0,
+        "status": "submitted",
+        "submit_time": "2025-11-13 09:10:00",
+        "approve_time": null
+      },
+      {
+        "reimbursement_id": 4,
+        "assignment_id": 9,
+        "transport_mode": "metro",
+        "claimed_amount": 10.0,
+        "status": "approved",
+        "submit_time": "2025-11-08 22:00:00",
+        "approve_time": "2025-11-09 09:00:00"
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "order_id": 16,
+      "purpose": "Missing payment record; visible as unknown billing state",
+      "synthetic": true
+    },
+    {
+      "order_id": 17,
+      "purpose": "Exactly 24 hours old; strict older-than excludes it",
+      "synthetic": true
+    },
+    {
+      "order_id": 18,
+      "purpose": "24 hours plus one second; includes it",
+      "synthetic": true
+    },
+    {
+      "order_id": 19,
+      "purpose": "Exactly seven days old; lower bound includes it",
+      "synthetic": true
+    },
+    {
+      "order_id": 20,
+      "purpose": "Seven days plus one second; outside window",
+      "synthetic": true
+    },
+    {
+      "order_id": 21,
+      "purpose": "Future settlement and rating cannot leak into as-of results",
+      "synthetic": true
+    },
+    {
+      "order_id": 22,
+      "purpose": "Future refund must leave full as-of settlement visible",
+      "synthetic": true
+    },
+    {
+      "order_id": 23,
+      "purpose": "Full refund before cutoff; excludes positive-net repeat purchase",
+      "synthetic": true
+    },
+    {
+      "order_id": 24,
+      "purpose": "Partial refund; reports net settlement separately",
+      "synthetic": true
+    },
+    {
+      "order_id": 25,
+      "purpose": "Zero km is measured zero, not missing",
+      "synthetic": true
+    },
+    {
+      "order_id": 26,
+      "purpose": "Unknown km stays NULL and raises coverage gap",
+      "synthetic": true
+    },
+    {
+      "order_id": 27,
+      "purpose": "Old request but recent completion; service clock is completion",
+      "synthetic": true
+    },
+    {
+      "order_id": 28,
+      "purpose": "Future completion excluded despite current completed status",
+      "synthetic": true
+    },
+    {
+      "order_id": 29,
+      "purpose": "Old completed service, recent cash; cash and service cohorts differ",
+      "synthetic": true
+    },
+    {
+      "order_id": 30,
+      "purpose": "Cancelled request cannot become an unpaid completed service",
+      "synthetic": true
+    },
+    {
+      "order_id": 31,
+      "purpose": "Exactly 30-day service lower bound includes it",
+      "synthetic": true
+    },
+    {
+      "order_id": 32,
+      "purpose": "One second before 30-day lower bound excludes service cohort",
+      "synthetic": true
+    },
+    {
+      "order_id": 33,
+      "purpose": "Unrated driver with a completed service keeps NULL average",
+      "synthetic": true
+    }
+  ]
+}

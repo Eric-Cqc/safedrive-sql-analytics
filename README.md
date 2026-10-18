@@ -1,4 +1,54 @@
-# SafeDrive SQL Analytics
+# SafeDrive SQL Analytics · 代驾业务分析与研究账本
+
+**从业务问题写出 SQL，再把每个结果追溯到订单、支付和事件。**
+
+以虚构代驾服务为背景的数据库与分析作品：客户、车辆、司机、订单、支付、评价等 11 张关系表，覆盖司机收入、服务质量、复购和逾期未结算等 10 个问题。所有演示记录均为合成数据。
+
+## 先看交互版
+
+**[打开 SQL 研究账本](https://eric-cqc.github.io/safedrive-sql-analytics/research-ledger/web/reader.html)** · [新版使用说明](research-ledger/USER_GUIDE.md) · [直接查看 SQL](research-ledger/sql/10_queries/)
+
+![SQL 研究账本：业务问题、统计口径与订单证据](docs/research-ledger.png)
+
+例如：“哪些已完成的订单超过 24 小时仍未结算？”先选择 Q10，查看结果，再把时点后移一小时；页面会显示新增和移出的订单。点击一行可以追到原始事件、支付状态和时间边界，而不只得到一个总数。
+
+另一个问题是：“司机收入应该按服务完成时间，还是收款发生时间计算？”Q02 将这两种口径分开，让结果的含义可检查。
+
+## 这份作品展示什么
+
+| 能力 | 具体实现 |
+| --- | --- |
+| 关系建模 | 11 张表的主外键关系、订单与履约/支付/评价的连接 |
+| SQL 分析 | 多表关联、CTE、窗口函数、条件汇总及时间窗口 |
+| 业务口径 | 区分订单与事件、服务与现金、缺失与零值、退款与复购 |
+| 可核验输出 | 33 笔合成订单、18 个边界案例、7 种情景和逐行证据 |
+
+交互版还可查看情景 SQL、导出预期结果 CSV，并保存带引用的分析笔记。它是分析阅读器，浏览器不运行 MySQL。
+
+## 两个版本，分别阅读
+
+| 位置 | 内容 | 验证边界 |
+| --- | --- | --- |
+| 根目录 `sql/`、`results/`、`scripts/` | 保留的基础课程重构版及原有 TSV 结果 | 保留既有实现与历史快照；本次未重跑其数据库 |
+| [`research-ledger/`](research-ledger/) | 新增交互账本、扩展口径和独立 Python 校验 | 页面与 CSV 展示 Python 推导的预期值；新版 MySQL 兼容性、触发器和回滚仍待实跑 |
+
+2026-10-18 对新增公开副本核验：18 项 Python 单测、10 份预期 TSV 对照、JavaScript 语法和公开文件审查通过；浏览器实际验证了情景切换、订单证据、笔记保存/刷新恢复、CSV 下载及业务问题切换。没有将这些检查当成 MySQL 实跑或真实运营验证。
+
+## 下载后使用新版
+
+下载仓库，打开 `research-ledger/web/reader.html`。保留完整目录，保证原始夹具与证据链接可访问。也可以在仓库根目录用现有 Python 启动本地静态服务：
+
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+然后访问 `http://127.0.0.1:8000/research-ledger/web/reader.html`。只想阅读无需安装数据库。新版的计算复核与受保护的 MySQL 验证步骤见其 [README](research-ledger/README.md)。
+
+---
+
+## 基础 SQL 版本：结构与复现
+
+以下是保留的基础版文档；其中的纯 SQL 范围与历史结果只指根目录基础版，不指上面的交互账本。
 
 A relational database and analytics project for a fictional designated-driver service, reconstructed from a graduate database coursework project and rerun on MySQL.
 

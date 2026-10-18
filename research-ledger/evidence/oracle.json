@@ -1,0 +1,763 @@
+{
+  "q01": [
+    {
+      "customer_id": 1,
+      "customer_name": "Customer 001",
+      "completed_orders": 3,
+      "incident_events": 3,
+      "high_severity_events": 2,
+      "affected_orders": 1,
+      "order_ids": "1,2,3",
+      "affected_order_rate": 0.3333
+    },
+    {
+      "customer_id": 2,
+      "customer_name": "Customer 002",
+      "completed_orders": 3,
+      "incident_events": 1,
+      "high_severity_events": 1,
+      "affected_orders": 1,
+      "order_ids": "4,5,6",
+      "affected_order_rate": 0.3333
+    },
+    {
+      "customer_id": 3,
+      "customer_name": "Customer 003",
+      "completed_orders": 2,
+      "incident_events": 2,
+      "high_severity_events": 1,
+      "affected_orders": 1,
+      "order_ids": "7,8",
+      "affected_order_rate": 0.5
+    }
+  ],
+  "q02": [
+    {
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "completed_orders": 13,
+      "service_cohort_net_paid_asof": 560.0,
+      "cash_collected_window": 800.0,
+      "refunds_window": 140.0,
+      "measured_km": 220,
+      "missing_km_orders": 1,
+      "order_ids": "16,17,18,19,20,21,22,23,24,25,26,27,31",
+      "net_cash_window": 660.0
+    },
+    {
+      "driver_id": 6,
+      "driver_name": "Driver 006",
+      "completed_orders": 3,
+      "service_cohort_net_paid_asof": 184.0,
+      "cash_collected_window": 184.0,
+      "refunds_window": 0.0,
+      "measured_km": 140,
+      "missing_km_orders": 0,
+      "order_ids": "10,11,33",
+      "net_cash_window": 184.0
+    },
+    {
+      "driver_id": 5,
+      "driver_name": "Driver 005",
+      "completed_orders": 2,
+      "service_cohort_net_paid_asof": 235.0,
+      "cash_collected_window": 235.0,
+      "refunds_window": 0.0,
+      "measured_km": 165,
+      "missing_km_orders": 0,
+      "order_ids": "9,13",
+      "net_cash_window": 235.0
+    },
+    {
+      "driver_id": 2,
+      "driver_name": "Driver 002",
+      "completed_orders": 2,
+      "service_cohort_net_paid_asof": 226.0,
+      "cash_collected_window": 226.0,
+      "refunds_window": 0.0,
+      "measured_km": 118,
+      "missing_km_orders": 0,
+      "order_ids": "3,4",
+      "net_cash_window": 226.0
+    },
+    {
+      "driver_id": 1,
+      "driver_name": "Driver 001",
+      "completed_orders": 2,
+      "service_cohort_net_paid_asof": 214.0,
+      "cash_collected_window": 314.0,
+      "refunds_window": 0.0,
+      "measured_km": 162,
+      "missing_km_orders": 0,
+      "order_ids": "1,2",
+      "net_cash_window": 314.0
+    },
+    {
+      "driver_id": 3,
+      "driver_name": "Driver 003",
+      "completed_orders": 2,
+      "service_cohort_net_paid_asof": 176.0,
+      "cash_collected_window": 176.0,
+      "refunds_window": 0.0,
+      "measured_km": 117,
+      "missing_km_orders": 0,
+      "order_ids": "5,6",
+      "net_cash_window": 176.0
+    },
+    {
+      "driver_id": 4,
+      "driver_name": "Driver 004",
+      "completed_orders": 2,
+      "service_cohort_net_paid_asof": 0.0,
+      "cash_collected_window": 0.0,
+      "refunds_window": 0.0,
+      "measured_km": 125,
+      "missing_km_orders": 0,
+      "order_ids": "7,8",
+      "net_cash_window": 0.0
+    }
+  ],
+  "q03": [
+    {
+      "partner_name": "Partner Hub Alpha",
+      "pickup_location": "Zone A Gate",
+      "dropoff_location": "Zone B Hub",
+      "order_count": 2,
+      "custody_episodes": 2,
+      "order_ids": "1,3",
+      "route_rank": 1
+    },
+    {
+      "partner_name": "Partner Hub Alpha",
+      "pickup_location": "Zone A Gate",
+      "dropoff_location": "Zone C Hub",
+      "order_count": 1,
+      "custody_episodes": 1,
+      "order_ids": "7",
+      "route_rank": 2
+    },
+    {
+      "partner_name": "Partner Hub Beta",
+      "pickup_location": "Zone B Gate",
+      "dropoff_location": "Zone C Hub",
+      "order_count": 2,
+      "custody_episodes": 2,
+      "order_ids": "2,5",
+      "route_rank": 1
+    },
+    {
+      "partner_name": "Partner Hub Beta",
+      "pickup_location": "Zone B Gate",
+      "dropoff_location": "Zone D Hub",
+      "order_count": 1,
+      "custody_episodes": 1,
+      "order_ids": "6",
+      "route_rank": 2
+    },
+    {
+      "partner_name": "Partner Hub Gamma",
+      "pickup_location": "Zone C Gate",
+      "dropoff_location": "Zone D Hub",
+      "order_count": 2,
+      "custody_episodes": 2,
+      "order_ids": "4,8",
+      "route_rank": 1
+    },
+    {
+      "partner_name": "Partner Hub Gamma",
+      "pickup_location": "Zone D Gate",
+      "dropoff_location": "Zone E Hub",
+      "order_count": 1,
+      "custody_episodes": 1,
+      "order_ids": "9",
+      "route_rank": 2
+    }
+  ],
+  "q04": [
+    {
+      "order_id": 1,
+      "scheduled_start": "2025-11-10 18:00:00",
+      "start_time": "2025-11-10 18:08:00",
+      "late_minutes": 8.0,
+      "driver_id": 1,
+      "driver_name": "Driver 001",
+      "other_nearby_orders": 0,
+      "order_ids": 1
+    },
+    {
+      "order_id": 2,
+      "scheduled_start": "2025-11-12 20:30:00",
+      "start_time": "2025-11-12 20:32:00",
+      "late_minutes": 2.0,
+      "driver_id": 1,
+      "driver_name": "Driver 001",
+      "other_nearby_orders": 0,
+      "order_ids": 2
+    },
+    {
+      "order_id": 4,
+      "scheduled_start": "2025-11-11 18:00:00",
+      "start_time": "2025-11-11 18:20:00",
+      "late_minutes": 20.0,
+      "driver_id": 2,
+      "driver_name": "Driver 002",
+      "other_nearby_orders": 0,
+      "order_ids": 4
+    },
+    {
+      "order_id": 5,
+      "scheduled_start": "2025-11-13 08:00:00",
+      "start_time": "2025-11-13 08:10:00",
+      "late_minutes": 10.0,
+      "driver_id": 3,
+      "driver_name": "Driver 003",
+      "other_nearby_orders": 0,
+      "order_ids": 5
+    },
+    {
+      "order_id": 6,
+      "scheduled_start": "2025-11-14 22:30:00",
+      "start_time": "2025-11-14 22:31:00",
+      "late_minutes": 1.0,
+      "driver_id": 3,
+      "driver_name": "Driver 003",
+      "other_nearby_orders": 0,
+      "order_ids": 6
+    },
+    {
+      "order_id": 7,
+      "scheduled_start": "2025-11-05 13:00:00",
+      "start_time": "2025-11-05 13:05:00",
+      "late_minutes": 5.0,
+      "driver_id": 4,
+      "driver_name": "Driver 004",
+      "other_nearby_orders": 0,
+      "order_ids": 7
+    },
+    {
+      "order_id": 8,
+      "scheduled_start": "2025-11-14 10:30:00",
+      "start_time": "2025-11-14 10:45:00",
+      "late_minutes": 15.0,
+      "driver_id": 4,
+      "driver_name": "Driver 004",
+      "other_nearby_orders": 0,
+      "order_ids": 8
+    },
+    {
+      "order_id": 9,
+      "scheduled_start": "2025-11-08 19:30:00",
+      "start_time": "2025-11-08 19:40:00",
+      "late_minutes": 10.0,
+      "driver_id": 5,
+      "driver_name": "Driver 005",
+      "other_nearby_orders": 0,
+      "order_ids": 9
+    },
+    {
+      "order_id": 10,
+      "scheduled_start": "2025-11-13 21:30:00",
+      "start_time": "2025-11-13 21:35:00",
+      "late_minutes": 5.0,
+      "driver_id": 6,
+      "driver_name": "Driver 006",
+      "other_nearby_orders": 0,
+      "order_ids": 10
+    },
+    {
+      "order_id": 11,
+      "scheduled_start": "2025-11-07 18:30:00",
+      "start_time": "2025-11-07 18:40:00",
+      "late_minutes": 10.0,
+      "driver_id": 6,
+      "driver_name": "Driver 006",
+      "other_nearby_orders": 0,
+      "order_ids": 11
+    },
+    {
+      "order_id": 16,
+      "scheduled_start": "2025-11-13 11:05:00",
+      "start_time": "2025-11-13 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 2,
+      "order_ids": 16
+    },
+    {
+      "order_id": 17,
+      "scheduled_start": "2025-11-14 11:05:00",
+      "start_time": "2025-11-14 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 17
+    },
+    {
+      "order_id": 18,
+      "scheduled_start": "2025-11-14 11:04:59",
+      "start_time": "2025-11-14 11:09:59",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 18
+    },
+    {
+      "order_id": 19,
+      "scheduled_start": "2025-11-08 11:05:00",
+      "start_time": "2025-11-08 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 19
+    },
+    {
+      "order_id": 20,
+      "scheduled_start": "2025-11-08 11:04:59",
+      "start_time": "2025-11-08 11:09:59",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 20
+    },
+    {
+      "order_id": 21,
+      "scheduled_start": "2025-11-13 11:05:00",
+      "start_time": "2025-11-13 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 2,
+      "order_ids": 21
+    },
+    {
+      "order_id": 22,
+      "scheduled_start": "2025-11-12 11:05:00",
+      "start_time": "2025-11-12 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 0,
+      "order_ids": 22
+    },
+    {
+      "order_id": 23,
+      "scheduled_start": "2025-11-11 11:05:00",
+      "start_time": "2025-11-11 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 0,
+      "order_ids": 23
+    },
+    {
+      "order_id": 24,
+      "scheduled_start": "2025-11-10 11:05:00",
+      "start_time": "2025-11-10 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 0,
+      "order_ids": 24
+    },
+    {
+      "order_id": 25,
+      "scheduled_start": "2025-11-13 10:05:00",
+      "start_time": "2025-11-13 10:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 25
+    },
+    {
+      "order_id": 26,
+      "scheduled_start": "2025-11-13 09:05:00",
+      "start_time": "2025-11-13 09:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 26
+    },
+    {
+      "order_id": 27,
+      "scheduled_start": "2025-11-13 08:05:00",
+      "start_time": "2025-11-13 08:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 0,
+      "order_ids": 27
+    },
+    {
+      "order_id": 29,
+      "scheduled_start": "2025-10-06 11:05:00",
+      "start_time": "2025-10-06 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 1,
+      "driver_name": "Driver 001",
+      "other_nearby_orders": 0,
+      "order_ids": 29
+    },
+    {
+      "order_id": 31,
+      "scheduled_start": "2025-10-16 11:05:00",
+      "start_time": "2025-10-16 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 31
+    },
+    {
+      "order_id": 32,
+      "scheduled_start": "2025-10-16 11:04:59",
+      "start_time": "2025-10-16 11:09:59",
+      "late_minutes": 5.0,
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "other_nearby_orders": 1,
+      "order_ids": 32
+    },
+    {
+      "order_id": 33,
+      "scheduled_start": "2025-11-14 11:05:00",
+      "start_time": "2025-11-14 11:10:00",
+      "late_minutes": 5.0,
+      "driver_id": 6,
+      "driver_name": "Driver 006",
+      "other_nearby_orders": 0,
+      "order_ids": 33
+    }
+  ],
+  "q05": [
+    {
+      "driver_id": 1,
+      "driver_name": "Driver 001",
+      "current_summary_avg": 4.5,
+      "current_summary_count": 2,
+      "current_recomputed_avg": 4.5,
+      "current_recomputed_count": 2,
+      "asof_avg": 4.5,
+      "asof_rating_count": 2,
+      "order_ids": "1,2"
+    },
+    {
+      "driver_id": 2,
+      "driver_name": "Driver 002",
+      "current_summary_avg": 4.0,
+      "current_summary_count": 2,
+      "current_recomputed_avg": 4.0,
+      "current_recomputed_count": 2,
+      "asof_avg": 4.0,
+      "asof_rating_count": 2,
+      "order_ids": "3,4"
+    },
+    {
+      "driver_id": 3,
+      "driver_name": "Driver 003",
+      "current_summary_avg": 4.5,
+      "current_summary_count": 2,
+      "current_recomputed_avg": 4.5,
+      "current_recomputed_count": 2,
+      "asof_avg": 4.5,
+      "asof_rating_count": 2,
+      "order_ids": "5,6"
+    },
+    {
+      "driver_id": 4,
+      "driver_name": "Driver 004",
+      "current_summary_avg": 5.0,
+      "current_summary_count": 1,
+      "current_recomputed_avg": 5.0,
+      "current_recomputed_count": 1,
+      "asof_avg": 5.0,
+      "asof_rating_count": 1,
+      "order_ids": "7"
+    },
+    {
+      "driver_id": 5,
+      "driver_name": "Driver 005",
+      "current_summary_avg": 3.5,
+      "current_summary_count": 2,
+      "current_recomputed_avg": 3.5,
+      "current_recomputed_count": 2,
+      "asof_avg": 3.5,
+      "asof_rating_count": 2,
+      "order_ids": "9,13"
+    },
+    {
+      "driver_id": 6,
+      "driver_name": "Driver 006",
+      "current_summary_avg": 4.0,
+      "current_summary_count": 1,
+      "current_recomputed_avg": 4.0,
+      "current_recomputed_count": 1,
+      "asof_avg": 4.0,
+      "asof_rating_count": 1,
+      "order_ids": "11"
+    },
+    {
+      "driver_id": 7,
+      "driver_name": "Driver 007",
+      "current_summary_avg": 3.33,
+      "current_summary_count": 3,
+      "current_recomputed_avg": 3.33,
+      "current_recomputed_count": 3,
+      "asof_avg": 4.5,
+      "asof_rating_count": 2,
+      "order_ids": "22,25"
+    }
+  ],
+  "q06": [
+    {
+      "customer_name": "Customer 001",
+      "order_id": 3,
+      "request_time": "2025-11-14 09:00:00",
+      "completed_at": "2025-11-14 10:45:00",
+      "pickup_location": "Zone A Gate",
+      "dropoff_location": "Zone B Hub",
+      "service_type": "next_day",
+      "payment_state_asof": "paid",
+      "net_paid_asof": 72.0,
+      "measured_km": 68,
+      "order_ids": 3
+    },
+    {
+      "customer_name": "Customer 004",
+      "order_id": 10,
+      "request_time": "2025-11-13 21:00:00",
+      "completed_at": "2025-11-13 22:30:00",
+      "pickup_location": "Zone D Gate",
+      "dropoff_location": "Zone F Hub",
+      "service_type": "drive_now",
+      "payment_state_asof": "pending",
+      "net_paid_asof": 0.0,
+      "measured_km": 54,
+      "order_ids": 10
+    },
+    {
+      "customer_name": "Customer 001",
+      "order_id": 2,
+      "request_time": "2025-11-12 20:00:00",
+      "completed_at": "2025-11-12 23:00:00",
+      "pickup_location": "Zone B Gate",
+      "dropoff_location": "Zone C Hub",
+      "service_type": "overnight",
+      "payment_state_asof": "paid",
+      "net_paid_asof": 126.0,
+      "measured_km": 120,
+      "order_ids": 2
+    },
+    {
+      "customer_name": "Customer 001",
+      "order_id": 1,
+      "request_time": "2025-11-10 17:50:00",
+      "completed_at": "2025-11-10 18:50:00",
+      "pickup_location": "Zone A Gate",
+      "dropoff_location": "Zone B Hub",
+      "service_type": "drive_now",
+      "payment_state_asof": "paid",
+      "net_paid_asof": 88.0,
+      "measured_km": 42,
+      "order_ids": 1
+    },
+    {
+      "customer_name": "Customer 004",
+      "order_id": 9,
+      "request_time": "2025-11-08 19:00:00",
+      "completed_at": "2025-11-08 21:50:00",
+      "pickup_location": "Zone D Gate",
+      "dropoff_location": "Zone E Hub",
+      "service_type": "overnight",
+      "payment_state_asof": "paid",
+      "net_paid_asof": 140.0,
+      "measured_km": 110,
+      "order_ids": 9
+    }
+  ],
+  "q07": [
+    {
+      "service_type": "next_day",
+      "completed_orders": 3,
+      "review_count": 3,
+      "review_coverage": 1.0,
+      "avg_rating": 4.67,
+      "min_rating": 4,
+      "max_rating": 5,
+      "order_ids": "3,7,11"
+    },
+    {
+      "service_type": "drive_now",
+      "completed_orders": 20,
+      "review_count": 4,
+      "review_coverage": 0.2,
+      "avg_rating": 4.5,
+      "min_rating": 4,
+      "max_rating": 5,
+      "order_ids": "1,5,8,10,16,17,18,19,20,21,22,23,24,25,26,27,29,31,32,33"
+    },
+    {
+      "service_type": "overnight",
+      "completed_orders": 5,
+      "review_count": 5,
+      "review_coverage": 1.0,
+      "avg_rating": 3.8,
+      "min_rating": 3,
+      "max_rating": 5,
+      "order_ids": "2,4,6,9,13"
+    }
+  ],
+  "q08": [
+    {
+      "customer_id": 5,
+      "customer_name": "Customer 005",
+      "membership_tier": "normal",
+      "paid_orders": 10,
+      "vehicle_count": 1,
+      "net_paid_asof": 944.0,
+      "order_ids": "11,22,24,25,26,27,29,31,32,33",
+      "repeat_order_share": 0.9,
+      "extra_vehicle_order_share": 0.9
+    },
+    {
+      "customer_id": 1,
+      "customer_name": "Customer 001",
+      "membership_tier": "VIP",
+      "paid_orders": 3,
+      "vehicle_count": 2,
+      "net_paid_asof": 286.0,
+      "order_ids": "1,2,3",
+      "repeat_order_share": 0.6667,
+      "extra_vehicle_order_share": 0.3333
+    },
+    {
+      "customer_id": 2,
+      "customer_name": "Customer 002",
+      "membership_tier": "normal",
+      "paid_orders": 3,
+      "vehicle_count": 2,
+      "net_paid_asof": 330.0,
+      "order_ids": "4,5,6",
+      "repeat_order_share": 0.6667,
+      "extra_vehicle_order_share": 0.3333
+    }
+  ],
+  "q09": [
+    {
+      "brand_id": 1,
+      "brand_name": "Brand Alpha",
+      "model_id": 4,
+      "model_name": "Model Alpha One",
+      "vehicle_count": 2,
+      "vehicle_ids": "1,6"
+    },
+    {
+      "brand_id": 1,
+      "brand_name": "Brand Alpha",
+      "model_id": 5,
+      "model_name": "Model Alpha Two",
+      "vehicle_count": 2,
+      "vehicle_ids": "2,7"
+    },
+    {
+      "brand_id": 2,
+      "brand_name": "Brand Beta",
+      "model_id": 6,
+      "model_name": "Model Beta One",
+      "vehicle_count": 2,
+      "vehicle_ids": "3,8"
+    },
+    {
+      "brand_id": 2,
+      "brand_name": "Brand Beta",
+      "model_id": 7,
+      "model_name": "Model Beta Two",
+      "vehicle_count": 1,
+      "vehicle_ids": "4"
+    },
+    {
+      "brand_id": 3,
+      "brand_name": "Brand Gamma",
+      "model_id": 8,
+      "model_name": "Model Gamma One",
+      "vehicle_count": 1,
+      "vehicle_ids": "5"
+    },
+    {
+      "brand_id": 3,
+      "brand_name": "Brand Gamma",
+      "model_id": 9,
+      "model_name": "Model Gamma Empty",
+      "vehicle_count": 0,
+      "vehicle_ids": null
+    }
+  ],
+  "q10": [
+    {
+      "order_id": 19,
+      "customer_id": 5,
+      "customer_name": "Customer 005",
+      "completed_at": "2025-11-08 12:00:00",
+      "quoted_fee": 100,
+      "payment_state_asof": "pending",
+      "hours_since_completion": 168.0,
+      "order_ids": 19
+    },
+    {
+      "order_id": 16,
+      "customer_id": 5,
+      "customer_name": "Customer 005",
+      "completed_at": "2025-11-13 12:00:00",
+      "quoted_fee": null,
+      "payment_state_asof": "missing",
+      "hours_since_completion": 48.0,
+      "order_ids": 16
+    },
+    {
+      "order_id": 21,
+      "customer_id": 5,
+      "customer_name": "Customer 005",
+      "completed_at": "2025-11-13 12:00:00",
+      "quoted_fee": 100,
+      "payment_state_asof": "pending",
+      "hours_since_completion": 48.0,
+      "order_ids": 21
+    },
+    {
+      "order_id": 10,
+      "customer_id": 4,
+      "customer_name": "Customer 004",
+      "completed_at": "2025-11-13 22:30:00",
+      "quoted_fee": 108.0,
+      "payment_state_asof": "pending",
+      "hours_since_completion": 37.5,
+      "order_ids": 10
+    },
+    {
+      "order_id": 8,
+      "customer_id": 3,
+      "customer_name": "Customer 003",
+      "completed_at": "2025-11-14 11:40:00",
+      "quoted_fee": 95.0,
+      "payment_state_asof": "pending",
+      "hours_since_completion": 24.3333,
+      "order_ids": 8
+    },
+    {
+      "order_id": 18,
+      "customer_id": 5,
+      "customer_name": "Customer 005",
+      "completed_at": "2025-11-14 11:59:59",
+      "quoted_fee": 100,
+      "payment_state_asof": "pending",
+      "hours_since_completion": 24.0003,
+      "order_ids": 18
+    }
+  ]
+}

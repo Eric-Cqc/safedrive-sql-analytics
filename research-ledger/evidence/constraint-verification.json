@@ -1,0 +1,170 @@
+{
+  "kind": "pure-data expected-predicate oracle, not MySQL",
+  "status": "passed",
+  "count": 32,
+  "accept_cases": 11,
+  "reject_cases": 21,
+  "cases": [
+    {
+      "name": "nonempty summary cannot have NULL mean",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "empty summary remains NULL",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "valid nonempty arithmetic mean",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "completion mismatch on new service",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "unrated successful service cannot change driver",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "successful service cannot shift end",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "successful service cannot be deleted",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "zero odometer remains observed zero",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "negative odometer rejected",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "half missing odometer rejected",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "both missing odometer accepted",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "assigned request clock cannot move",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "completed order cannot shift completion",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "existing order no-op accepted",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "settlement amount cannot be rewritten",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "settlement timestamp cannot be rewritten",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "settled row cannot be erased",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "payment cannot be reassigned",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "pending-to-paid transition accepted",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "paid-to-partial-refund transition accepted",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "paid-to-full-refund transition accepted",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "recorded refund cannot be rewritten",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "excess refund rejected",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "new settlement cannot precede request",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "future settlement is valid but not known as-of",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "custody cannot precede assignment",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "custody assignment cannot be reassigned",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "open-ended custody stays allowed",
+      "expected": "accept",
+      "status": "passed"
+    },
+    {
+      "name": "reimbursement cannot precede assignment",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "approval cannot precede submission",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "approval cannot omit approval timestamp",
+      "expected": "reject",
+      "status": "passed"
+    },
+    {
+      "name": "valid submitted claim stays accepted",
+      "expected": "accept",
+      "status": "passed"
+    }
+  ],
+  "case_source_sha256": "5897a99301dfadb5d9285a37979917e0414d9cf1ace032ef06a5e09345cf52d9"
+}

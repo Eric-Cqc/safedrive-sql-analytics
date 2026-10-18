@@ -1,0 +1,4 @@
+customer_id	customer_name	membership_tier	paid_orders	vehicle_count	net_paid_asof	order_ids	repeat_order_share	extra_vehicle_order_share
+5	Customer 005	normal	10	1	944.0	11,22,24,25,26,27,29,31,32,33	0.9	0.9
+1	Customer 001	VIP	3	2	286.0	1,2,3	0.6667	0.3333
+2	Customer 002	normal	3	2	330.0	4,5,6	0.6667	0.3333

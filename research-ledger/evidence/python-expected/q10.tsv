@@ -1,0 +1,7 @@
+order_id	customer_id	customer_name	completed_at	quoted_fee	payment_state_asof	hours_since_completion	order_ids
+19	5	Customer 005	2025-11-08 12:00:00	100	pending	168.0	19
+16	5	Customer 005	2025-11-13 12:00:00	NULL	missing	48.0	16
+21	5	Customer 005	2025-11-13 12:00:00	100	pending	48.0	21
+10	4	Customer 004	2025-11-13 22:30:00	108.0	pending	37.5	10
+8	3	Customer 003	2025-11-14 11:40:00	95.0	pending	24.3333	8
+18	5	Customer 005	2025-11-14 11:59:59	100	pending	24.0003	18

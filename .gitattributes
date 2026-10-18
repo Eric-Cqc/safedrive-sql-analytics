@@ -1,0 +1,3 @@
+*.sql linguist-detectable=true
+research-ledger/web/reader.html linguist-generated=true
+research-ledger/web/data/reader.json linguist-generated=true

@@ -1,0 +1,397 @@
+{
+  "status": "synthetic_constraint_counterexamples",
+  "execution": "pure Python expected predicates, not MySQL",
+  "cases": [
+    {
+      "name": "nonempty summary cannot have NULL mean",
+      "synthetic": true,
+      "table": "Driver",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "rating_count": 1,
+        "rating_sum": 5,
+        "avg_rating": null
+      },
+      "expected": "reject",
+      "code": "rating_summary"
+    },
+    {
+      "name": "empty summary remains NULL",
+      "synthetic": true,
+      "table": "Driver",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {},
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "valid nonempty arithmetic mean",
+      "synthetic": true,
+      "table": "Driver",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "rating_count": 2,
+        "rating_sum": 9,
+        "avg_rating": 4.5
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "completion mismatch on new service",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "row",
+      "patch": {
+        "end_time": "2025-11-10 19:00:00"
+      },
+      "expected": "reject",
+      "code": "successful_completion"
+    },
+    {
+      "name": "unrated successful service cannot change driver",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 31,
+      "operation": "update",
+      "patch": {
+        "driver_id": 5
+      },
+      "expected": "reject",
+      "code": "successful_immutable"
+    },
+    {
+      "name": "successful service cannot shift end",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "end_time": "2025-11-10 19:00:00"
+      },
+      "expected": "reject",
+      "code": "successful_immutable"
+    },
+    {
+      "name": "successful service cannot be deleted",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "delete",
+      "patch": {},
+      "expected": "reject",
+      "code": "successful_delete"
+    },
+    {
+      "name": "zero odometer remains observed zero",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "odometer_after": 10000
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "negative odometer rejected",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "odometer_before": -1
+      },
+      "expected": "reject",
+      "code": "odometer"
+    },
+    {
+      "name": "half missing odometer rejected",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "odometer_after": null
+      },
+      "expected": "reject",
+      "code": "odometer"
+    },
+    {
+      "name": "both missing odometer accepted",
+      "synthetic": true,
+      "table": "Assignment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "odometer_before": null,
+        "odometer_after": null
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "assigned request clock cannot move",
+      "synthetic": true,
+      "table": "order",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "request_time": "2025-11-10 17:49:00"
+      },
+      "expected": "reject",
+      "code": "assigned_order_immutable"
+    },
+    {
+      "name": "completed order cannot shift completion",
+      "synthetic": true,
+      "table": "order",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "completed_at": "2025-11-10 19:00:00"
+      },
+      "expected": "reject",
+      "code": "completed_order_immutable"
+    },
+    {
+      "name": "existing order no-op accepted",
+      "synthetic": true,
+      "table": "order",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {},
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "settlement amount cannot be rewritten",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "final_fee": 89
+      },
+      "expected": "reject",
+      "code": "settlement_immutable"
+    },
+    {
+      "name": "settlement timestamp cannot be rewritten",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "payment_time": "2025-11-11 00:00:00"
+      },
+      "expected": "reject",
+      "code": "settlement_immutable"
+    },
+    {
+      "name": "settled row cannot be erased",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "delete",
+      "patch": {},
+      "expected": "reject",
+      "code": "settlement_delete"
+    },
+    {
+      "name": "payment cannot be reassigned",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "order_id": 2
+      },
+      "expected": "reject",
+      "code": "payment_identity"
+    },
+    {
+      "name": "pending-to-paid transition accepted",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 10,
+      "operation": "update",
+      "patch": {
+        "status": "paid",
+        "final_fee": 100,
+        "payment_time": "2025-11-15 13:00:00"
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "paid-to-partial-refund transition accepted",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "status": "refunded",
+        "refund_amount": 10,
+        "refund_time": "2025-11-15 13:00:00"
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "paid-to-full-refund transition accepted",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "status": "refunded",
+        "refund_amount": 88,
+        "refund_time": "2025-11-15 13:00:00"
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "recorded refund cannot be rewritten",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 22,
+      "operation": "update",
+      "patch": {
+        "refund_amount": 1
+      },
+      "expected": "reject",
+      "code": "refund_immutable"
+    },
+    {
+      "name": "excess refund rejected",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "status": "refunded",
+        "refund_amount": 999,
+        "refund_time": "2025-11-15 13:00:00"
+      },
+      "expected": "reject",
+      "code": "payment_amount"
+    },
+    {
+      "name": "new settlement cannot precede request",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 10,
+      "operation": "update",
+      "patch": {
+        "status": "paid",
+        "final_fee": 100,
+        "payment_time": "2025-11-01 00:00:00"
+      },
+      "expected": "reject",
+      "code": "settlement_request_time"
+    },
+    {
+      "name": "future settlement is valid but not known as-of",
+      "synthetic": true,
+      "table": "Payment",
+      "row_id": 10,
+      "operation": "update",
+      "patch": {
+        "status": "paid",
+        "final_fee": 100,
+        "payment_time": "2025-11-16 13:00:00"
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "custody cannot precede assignment",
+      "synthetic": true,
+      "table": "ParkingCustody",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "check_in_time": "2025-11-01 00:00:00"
+      },
+      "expected": "reject",
+      "code": "custody_time"
+    },
+    {
+      "name": "custody assignment cannot be reassigned",
+      "synthetic": true,
+      "table": "ParkingCustody",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "assignment_id": 2
+      },
+      "expected": "reject",
+      "code": "assignment_identity"
+    },
+    {
+      "name": "open-ended custody stays allowed",
+      "synthetic": true,
+      "table": "ParkingCustody",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "check_out_time": null
+      },
+      "expected": "accept",
+      "code": null
+    },
+    {
+      "name": "reimbursement cannot precede assignment",
+      "synthetic": true,
+      "table": "Reimbursement",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "submit_time": "2025-11-01 00:00:00"
+      },
+      "expected": "reject",
+      "code": "reimbursement_time"
+    },
+    {
+      "name": "approval cannot precede submission",
+      "synthetic": true,
+      "table": "Reimbursement",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "approve_time": "2025-11-01 00:00:00"
+      },
+      "expected": "reject",
+      "code": "reimbursement_fields"
+    },
+    {
+      "name": "approval cannot omit approval timestamp",
+      "synthetic": true,
+      "table": "Reimbursement",
+      "row_id": 1,
+      "operation": "update",
+      "patch": {
+        "approve_time": null
+      },
+      "expected": "reject",
+      "code": "reimbursement_fields"
+    },
+    {
+      "name": "valid submitted claim stays accepted",
+      "synthetic": true,
+      "table": "Reimbursement",
+      "row_id": 3,
+      "operation": "update",
+      "patch": {},
+      "expected": "accept",
+      "code": null
+    }
+  ]
+}
