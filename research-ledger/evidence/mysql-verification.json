@@ -9,12 +9,12 @@
   "baseline_reproduced": false,
   "schemas": [
     {
-      "schema": "safedrive_20261018_test",
+      "schema": "safedrive_final_20261018_test",
       "created_fresh": true,
       "synthetic_only": true
     },
     {
-      "schema": "safedrive_20261018_repeat_test",
+      "schema": "safedrive_final_20261018_repeat_test",
       "created_fresh": true,
       "synthetic_only": true
     }
@@ -34,7 +34,7 @@
     "sql/10_queries/q09.sql": "e8c002fcb0a7416b3c09a9cd5afb685921a59a0e1676294fc8a2d76be0bf022d",
     "sql/10_queries/q10.sql": "bc8ae27971ca7bad0079de5ea0da395c2b749b807d44c6c696d77e0d5153d79d",
     "sql/20_trigger.sql": "2df684666368c94bfb5cc9bec612adf2317e3cdd292019ca04ae34ecb1cf1716",
-    "sql/30_assertions.sql": "c952af4b6d36692dbd968cba9cf2817ab384feaf5cbd860fe2f9ea024c71ede9",
+    "sql/30_assertions.sql": "1b1d6cf15ab47cfd68949f211d285b411234cedf722a40b5a301c70dfc74b4ae",
     "data/fixtures.json": "b89c72b839b21c176ec80469aab4d727cc7745dc60be6df1b9344aafc52672a2"
   },
   "result_sha256": {

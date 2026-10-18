@@ -36,6 +36,15 @@ def build() -> None:
     check_schema((ROOT/'sql/00_schema.sql').read_text())
     fixture=json.loads((ROOT/'data/fixtures.json').read_text())
     validate_fixture(fixture)
+    verification=json.loads((ROOT/'evidence/mysql-verification.json').read_text())
+    if verification.get('status')!='passed':
+        raise SystemExit('Live verification required before building a verified reader')
+    for relative,expected in verification['source_sha256'].items():
+        if hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()!=expected:
+            raise SystemExit('Stale MySQL verification: '+relative)
+    for name,expected in verification['result_sha256'].items():
+        if hashlib.sha256((ROOT/'results'/name).read_bytes()).hexdigest()!=expected:
+            raise SystemExit('Changed MySQL output: '+name)
     source={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for base in ['sql','scripts','data'] for p in sorted((ROOT/base).rglob('*')) if p.is_file() and '__pycache__' not in p.parts}
     payload={'schema':1,'status':'synthetic_python_oracle','mysql_status':'passed: MySQL 9.7.1; two fresh schemas; ten queries and six parameter probes per run',
         'fixture':fixture,'queries':{k:{'title':v[0],'question':v[1],'contract':v[2],'metric':v[3],

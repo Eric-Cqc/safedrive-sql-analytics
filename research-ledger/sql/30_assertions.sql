@@ -90,7 +90,7 @@ BEGIN
   UPDATE Assignment SET end_time='2025-11-10 17:00:00' WHERE assignment_id=1;
  END;
  IF NOT rejected THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Impossible assignment time accepted'; END IF;
- -- Candidate-v1 additional guards. These probes have not run on a real engine.
+ -- Additional guards; execute through the guarded verifier and retain its source hashes.
  SET rejected=FALSE;
  BEGIN
   DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET rejected=TRUE;
