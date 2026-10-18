@@ -1,0 +1,7 @@
+brand_id	brand_name	model_id	model_name	vehicle_count	vehicle_ids
+1	Brand Alpha	4	Model Alpha One	2	1,6
+1	Brand Alpha	5	Model Alpha Two	2	2,7
+2	Brand Beta	6	Model Beta One	2	3,8
+2	Brand Beta	7	Model Beta Two	1	4
+3	Brand Gamma	8	Model Gamma One	1	5
+3	Brand Gamma	9	Model Gamma Empty	0	NULL

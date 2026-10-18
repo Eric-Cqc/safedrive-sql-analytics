@@ -23,7 +23,7 @@ QUERIES={
  'q02':('服务与现金，是两本账。','司机服务队列和窗口现金收付如何不同？','按完成时间选服务队列；现金按支付/退款时点选窗口。仅成功派单归属收入，重派不重复记账。里程为里程表差值。','net_cash_window'),
  'q03':('路线频次，按订单数。','每个保管合作方最常见的路线是什么？','不同订单是路线频次的单位；保管次数另列。平局按起终点稳定排序，不推断地理距离。','order_count'),
  'q04':('迟到，需要明确基准。','完成服务中哪些开始时间严格超过宽限？','实际开始与预约开始比较，超过才纳入。附近派单只显示时间邻近，不能据此断言因果。','late_minutes'),
- 'q05':('现在知道，不等于当时知道。','评价汇总与重算是否一致？报告时点知道哪些评价？','当前汇总和 as-of 均值分别呈现；未来评价不泄漏到报告时点。插入、更新、删除触发器尚待真实引擎实测。','asof_avg'),
+ 'q05':('现在知道，不等于当时知道。','评价汇总与重算是否一致？报告时点知道哪些评价？','当前汇总和 as-of 均值分别呈现；未来评价不泄漏到报告时点。插入、更新、删除触发器及回滚已在 MySQL 9.7.1 合成测试库验证。','asof_avg'),
  'q06':('VIP 身份，限于当前。','当前 VIP 客户有哪些已完成订单？','成员等级没有历史表，不能称作服务当日 VIP。支付状态与净收款根据报告时点判断。','net_paid_asof'),
  'q07':('均分之外，还看覆盖。','服务类型的评价均值在多大覆盖率下形成？','评价均值仅来自已知评价；分母是已完成订单。无评价是 NULL，不应填成零分或等同低质量。','review_coverage'),
  'q08':('复购，不等于车辆复用。','哪些客户发生多次正净结算购买？','完成、请求窗口、已结算和正净额共同筛选；全额退款排除。额外订单占比与车辆复用占比分开。','repeat_order_share'),
@@ -37,7 +37,7 @@ def build() -> None:
     fixture=json.loads((ROOT/'data/fixtures.json').read_text())
     validate_fixture(fixture)
     source={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for base in ['sql','scripts','data'] for p in sorted((ROOT/base).rglob('*')) if p.is_file() and '__pycache__' not in p.parts}
-    payload={'schema':1,'status':'synthetic_python_oracle','mysql_status':'not_run: public version has no MySQL execution verification',
+    payload={'schema':1,'status':'synthetic_python_oracle','mysql_status':'passed: MySQL 9.7.1; two fresh schemas; ten queries and six parameter probes per run',
         'fixture':fixture,'queries':{k:{'title':v[0],'question':v[1],'contract':v[2],'metric':v[3],
             'sql':(ROOT/f'sql/10_queries/{k}.sql').read_text(),'legacy_tsv':(ROOT/f'evidence/legacy-results/{k}.tsv').read_text()} for k,v in QUERIES.items()},
         'presets':[{'key':k,'name':n,'options':p,'results':analyze(fixture,p)} for k,n,p in PRESETS],
@@ -52,7 +52,7 @@ def build() -> None:
     html=(web/'index.html').read_text().replace('<link rel="stylesheet" href="styles.css">','<style>'+(web/'styles.css').read_text()+'</style>').replace('<script src="app.js" defer></script>','')
     html=html.replace('</body>','<script type="application/json" id="reader-data">'+text.replace('<','\\u003c')+'</script><script>'+(web/'app.js').read_text()+'</script></body>')
     (web/'reader.html').write_text(html)
-    report={'status':'generated','kind':'Python oracle only; no MySQL execution','preset_count':len(PRESETS),'query_result_sets':len(PRESETS)*10,'fixture_orders':33,'boundary_cases':18,'reader_json_sha256':hashlib.sha256(text.encode()).hexdigest(),'source_sha256':source}
+    report={'status':'generated','kind':'Python oracle; independently compared with MySQL 9.7.1','preset_count':len(PRESETS),'query_result_sets':len(PRESETS)*10,'fixture_orders':33,'boundary_cases':18,'reader_json_sha256':hashlib.sha256(text.encode()).hexdigest(),'source_sha256':source}
     (ROOT/'evidence/reader-build.json').write_text(json.dumps(report,indent=2)+'\n')
     print(f'Built {len(PRESETS)} presets / 70 Python-derived query tables; reader {len(html.encode())} bytes')
 

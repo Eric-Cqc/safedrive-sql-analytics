@@ -1,14 +1,24 @@
 {
-  "status": "blocked",
+  "status": "passed",
   "engine": "MySQL",
-  "client_version": "9.7.1 Homebrew arm64",
-  "server_version": null,
-  "exit_code": 2,
-  "fresh_check_command": "python3 scripts/verify_mysql.py --database safedrive_task23_20261002_test --mysql-socket /tmp/mysql.sock",
-  "reason": "No existing socket at /tmp/mysql.sock, /opt/homebrew/var/mysql/mysql.sock or /var/mysql/mysql.sock. No server was started.",
-  "schemas_created": 0,
-  "database_modified": false,
-  "snapshot_validation_is_compatibility_proof": false,
+  "server_version": "9.7.1",
+  "fixture": "synthetic-boundaries-v2",
+  "clock": "2025-11-15 12:00:00 Asia/Hong_Kong",
+  "runs": 2,
+  "parameter_probes_per_run": 6,
+  "baseline_reproduced": false,
+  "schemas": [
+    {
+      "schema": "safedrive_20261018_test",
+      "created_fresh": true,
+      "synthetic_only": true
+    },
+    {
+      "schema": "safedrive_20261018_repeat_test",
+      "created_fresh": true,
+      "synthetic_only": true
+    }
+  ],
   "source_sha256": {
     "sql/00_schema.sql": "ba9d0715daf702a6a4655166f1c75eeba57f3b3b7e98448d8ba49025fca37c2c",
     "sql/01_seed.sql": "3c067967a5d700d5373fc9dfa379b6f13a79eb5076d08a44f0472d1ca7f79905",
@@ -25,19 +35,21 @@
     "sql/10_queries/q10.sql": "bc8ae27971ca7bad0079de5ea0da395c2b749b807d44c6c696d77e0d5153d79d",
     "sql/20_trigger.sql": "2df684666368c94bfb5cc9bec612adf2317e3cdd292019ca04ae34ecb1cf1716",
     "sql/30_assertions.sql": "c952af4b6d36692dbd968cba9cf2817ab384feaf5cbd860fe2f9ea024c71ede9",
-    "scripts/audit_public_tree.py": "70e7bb53e294584ba14edd5f99ae90101a70e402253e3227aa376e2a5c8aebf1",
-    "scripts/build_fixtures.py": "80c8fdf3062c3fc840aa1e83c9864561256678e19459a312c0251f6ff834f36d",
-    "scripts/build_reader.py": "1426828839382cb6fe896785cdcfe514056876c26544be114996fd707920b2ff",
-    "scripts/constraint_contract.py": "58faf376a27782c2d8614bac058ac1ed5b6ba54014bd2415cedef1deb4bb03fb",
-    "scripts/oracle.py": "a39955cff014b511aff0443bf0b479ad726d3d8ba6fcf4ac11abd341bee01a53",
-    "scripts/static_contract.py": "4138aef4328e132468464e958db73c6fb3f16b558ffac16c8e152fedfaec9ed7",
-    "scripts/verify.sh": "aa1bc4005d7f00f2885dfc6e49e9d175051463a7f0f75e25f29e7784401ad63e",
-    "scripts/verify_expected_results.py": "59f20715ecef7323dffacf9ee3cdf2cde2196e0b4d70bd16819d7b5497ec79c0",
-    "scripts/verify_mysql.py": "7726665d805ac78a352d0339f14b1eea3af23888e6a0d236dd67fa09067c1a9a",
-    "data/constraint-cases.json": "5897a99301dfadb5d9285a37979917e0414d9cf1ace032ef06a5e09345cf52d9",
-    "data/fixtures.json": "b89c72b839b21c176ec80469aab4d727cc7745dc60be6df1b9344aafc52672a2",
-    "data/original_seed.sql": "4036600d02fc7f52fe723f1d6c5e9d4ec1a6ae8684b3c0ed9684767e001ee2fd"
+    "data/fixtures.json": "b89c72b839b21c176ec80469aab4d727cc7745dc60be6df1b9344aafc52672a2"
   },
-  "current_sql_execution": "not_run",
-  "last_socket_check_precedes_constraint_extension": true
+  "result_sha256": {
+    "q01.tsv": "812b55ff594482912ce524655732371d4ff4506afc3bf77f751ae6ce2293808f",
+    "q02.tsv": "c525fbdba2b8a5631ac5fc58d36070a70c3907228a27d6a6ff44eae8393aca5e",
+    "q03.tsv": "2f613358fdd68772e68daa70cf3e5379082ede3b16febc10ded99853062e14fd",
+    "q04.tsv": "a6faf26944d1b794c67aa60ec26b25a7eab9f90eb60044ce096e46cad2953cff",
+    "q05.tsv": "0909e10cddaeab2b6c0bb28a8665c2789a166b55b6bc0397d4b7b20a5926be2b",
+    "q06.tsv": "f9d4c4535b8f3ddc01fbe4a378328113655677ca0f70c5711da193f51cb7fdd7",
+    "q07.tsv": "699fc7fa1cb368f063d35d1a0d7ab98ae8adf9871ef5cceaef420b4692f83b92",
+    "q08.tsv": "03ecfc05c66d86c1342e241a7da7b793d97cfae3ac49bd9ab6d11306114ed2da",
+    "q09.tsv": "c280f959024d06143b4c0655dd0cfd105e456af1ba88fbb697cc5b1c0603d8b9",
+    "q10.tsv": "994b29892db3a8924ee08473fbbc0a55d9d57e62c83e6460990d9ded71b54e5f"
+  },
+  "limitations": [
+    "Single-server serial assertions; no production concurrency/load validation."
+  ]
 }

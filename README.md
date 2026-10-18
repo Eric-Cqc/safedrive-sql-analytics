@@ -1,5 +1,7 @@
 # SafeDrive SQL Analytics · 代驾业务分析与研究账本
 
+[![GitHub stars](https://img.shields.io/github/stars/Eric-Cqc/safedrive-sql-analytics?style=flat)](https://github.com/Eric-Cqc/safedrive-sql-analytics/stargazers) · [反馈问题](https://github.com/Eric-Cqc/safedrive-sql-analytics/issues/new/choose) · [查看全部作品](https://github.com/Eric-Cqc)
+
 **从业务问题写出 SQL，再把每个结果追溯到订单、支付和事件。**
 
 以虚构代驾服务为背景的数据库与分析作品：客户、车辆、司机、订单、支付、评价等 11 张关系表，覆盖司机收入、服务质量、复购和逾期未结算等 10 个问题。所有演示记录均为合成数据。
@@ -30,9 +32,9 @@
 | 位置 | 内容 | 验证边界 |
 | --- | --- | --- |
 | 根目录 `sql/`、`results/`、`scripts/` | 保留的基础课程重构版及原有 TSV 结果 | 保留既有实现与历史快照；本次未重跑其数据库 |
-| [`research-ledger/`](research-ledger/) | 新增交互账本、扩展口径和独立 Python 校验 | 页面与 CSV 展示 Python 推导的预期值；新版 MySQL 兼容性、触发器和回滚仍待实跑 |
+| [`research-ledger/`](research-ledger/) | 新增交互账本、扩展口径和独立 Python 校验 | 页面与 CSV 展示 Python 推导的预期值；MySQL 9.7.1 两库实跑、六组参数探针、触发器、约束和回滚已通过 |
 
-2026-10-18 对新增公开副本核验：18 项 Python 单测、10 份预期 TSV 对照、JavaScript 语法和公开文件审查通过；浏览器实际验证了情景切换、订单证据、笔记保存/刷新恢复、CSV 下载及业务问题切换。没有将这些检查当成 MySQL 实跑或真实运营验证。
+2026-10-18 对新增公开副本核验：18 项 Python 单测、10 份预期 TSV 对照、JavaScript 语法和公开文件审查通过；浏览器实际验证了情景切换、订单证据、笔记保存/刷新恢复、CSV 下载及业务问题切换。随后补完 MySQL 9.7.1 两个独立合成库实跑，十查询及六组参数探针均与 oracle 对照通过，触发器、约束拒绝和回滚通过。查看 [实跑记录](research-ledger/evidence/mysql-verification.json) 与 [结果文件](research-ledger/results/)。这不是生产负载验证。
 
 ## 下载后使用新版
 
@@ -218,3 +220,9 @@ results/q01..q10.tsv       committed result snapshots
 ## License
 
 MIT; see [LICENSE](LICENSE).
+
+## 使用、反馈与关注
+
+如果这个项目对你有帮助，欢迎点击仓库右上角 **Star**；想跟进版本更新，可用 **Watch → Custom → Releases**。遇到问题请提交复现步骤、预期与实际结果；也欢迎分享希望解决的业务问题。请只使用合成或已脱敏示例，不提交密钥、个人信息或真实客户资料。
+
+查看 [参与说明](CONTRIBUTING.md)。

@@ -1,0 +1,4 @@
+customer_id	customer_name	completed_orders	incident_events	high_severity_events	affected_orders	order_ids	affected_order_rate
+1	Customer 001	3	3	2	1	1,2,3	0.3333
+2	Customer 002	3	1	1	1	4,5,6	0.3333
+3	Customer 003	2	2	1	1	7,8	0.5000

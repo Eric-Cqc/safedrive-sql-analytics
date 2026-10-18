@@ -1,11 +1,11 @@
 {
   "status": "generated",
-  "kind": "Python oracle only; no MySQL execution",
+  "kind": "Python oracle; independently compared with MySQL 9.7.1",
   "preset_count": 7,
   "query_result_sets": 70,
   "fixture_orders": 33,
   "boundary_cases": 18,
-  "reader_json_sha256": "ef801b3b62be7732114d773fa8e86e4070eeb3411900d166f95c2dd901600387",
+  "reader_json_sha256": "ba1f19c1224ae00fea5dca551cd57cebb726f4db43ce6edf36f228df19ae0627",
   "source_sha256": {
     "sql/00_schema.sql": "ba9d0715daf702a6a4655166f1c75eeba57f3b3b7e98448d8ba49025fca37c2c",
     "sql/01_seed.sql": "3c067967a5d700d5373fc9dfa379b6f13a79eb5076d08a44f0472d1ca7f79905",
@@ -24,7 +24,7 @@
     "sql/30_assertions.sql": "c952af4b6d36692dbd968cba9cf2817ab384feaf5cbd860fe2f9ea024c71ede9",
     "scripts/audit_public_tree.py": "70e7bb53e294584ba14edd5f99ae90101a70e402253e3227aa376e2a5c8aebf1",
     "scripts/build_fixtures.py": "80c8fdf3062c3fc840aa1e83c9864561256678e19459a312c0251f6ff834f36d",
-    "scripts/build_reader.py": "1426828839382cb6fe896785cdcfe514056876c26544be114996fd707920b2ff",
+    "scripts/build_reader.py": "5fbfcf8566e16e4090d71c852748b17426ce1421ae78bae6e368a003f6f5fc7a",
     "scripts/constraint_contract.py": "58faf376a27782c2d8614bac058ac1ed5b6ba54014bd2415cedef1deb4bb03fb",
     "scripts/oracle.py": "a39955cff014b511aff0443bf0b479ad726d3d8ba6fcf4ac11abd341bee01a53",
     "scripts/static_contract.py": "4138aef4328e132468464e958db73c6fb3f16b558ffac16c8e152fedfaec9ed7",

@@ -1,0 +1,4 @@
+service_type	completed_orders	review_count	review_coverage	avg_rating	min_rating	max_rating	order_ids
+next_day	3	3	1.0000	4.67	4	5	3,7,11
+drive_now	20	4	0.2000	4.50	4	5	1,5,8,10,16,17,18,19,20,21,22,23,24,25,26,27,29,31,32,33
+overnight	5	5	1.0000	3.80	3	5	2,4,6,9,13

@@ -1,0 +1,6 @@
+customer_name	order_id	request_time	completed_at	pickup_location	dropoff_location	service_type	payment_state_asof	net_paid_asof	measured_km	order_ids
+Customer 001	3	2025-11-14 09:00:00	2025-11-14 10:45:00	Zone A Gate	Zone B Hub	next_day	paid	72.00	68	3
+Customer 004	10	2025-11-13 21:00:00	2025-11-13 22:30:00	Zone D Gate	Zone F Hub	drive_now	pending	0.00	54	10
+Customer 001	2	2025-11-12 20:00:00	2025-11-12 23:00:00	Zone B Gate	Zone C Hub	overnight	paid	126.00	120	2
+Customer 001	1	2025-11-10 17:50:00	2025-11-10 18:50:00	Zone A Gate	Zone B Hub	drive_now	paid	88.00	42	1
+Customer 004	9	2025-11-08 19:00:00	2025-11-08 21:50:00	Zone D Gate	Zone E Hub	overnight	paid	140.00	110	9

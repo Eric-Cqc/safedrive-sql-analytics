@@ -1,0 +1,8 @@
+driver_id	driver_name	current_summary_avg	current_summary_count	current_recomputed_avg	current_recomputed_count	asof_avg	asof_rating_count	order_ids
+1	Driver 001	4.50	2	4.50	2	4.50	2	1,2
+2	Driver 002	4.00	2	4.00	2	4.00	2	3,4
+3	Driver 003	4.50	2	4.50	2	4.50	2	5,6
+4	Driver 004	5.00	1	5.00	1	5.00	1	7
+5	Driver 005	3.50	2	3.50	2	3.50	2	9,13
+6	Driver 006	4.00	1	4.00	1	4.00	1	11
+7	Driver 007	3.33	3	3.33	3	4.50	2	22,25
